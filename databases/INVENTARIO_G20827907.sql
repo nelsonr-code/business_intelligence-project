@@ -84,7 +84,8 @@ CREATE TABLE producto
     PRIMARY KEY(id_prod),
     FOREIGN KEY(id_marca) REFERENCES marca(id_marca),
     FOREIGN KEY(id_sub) REFERENCES subcategoria(id_sub) ON DELETE NO ACTION ON UPDATE NO ACTION /* No se puede eliminar/actualizar en la tabla
-                                                                                                    padre sin antes eliminar/actualizar en la tabla hijo */
+                                                                                                padre sin antes eliminar/actualizar en la tabla
+                                                                                                hijo */
 )
 ;
 
