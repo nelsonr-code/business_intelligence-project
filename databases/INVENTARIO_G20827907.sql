@@ -4,9 +4,9 @@ Modified: 16/2/2020
 Database: MySQL 8.0
 */
 
--- DROP DATABASE totalsports;
--- CREATE DATABASE totalsports;
--- USE totalsports;
+-- DROP DATABASE INVENTARIO_G20827907;
+-- CREATE DATABASE INVENTARIO_G20827907;
+-- USE INVENTARIO_G20827907;
 
 -- Create tables section -------------------------------------------------
 
