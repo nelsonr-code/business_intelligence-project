@@ -1,6 +1,6 @@
 /*
 Created: 16/2/2020
-Modified: 16/2/2020
+Modified: 22/2/2020
 Database: MySQL 8.0
 */
 
@@ -10,88 +10,88 @@ Database: MySQL 8.0
 
 -- Create tables section -------------------------------------------------
 
--- Table categoria
+-- Table CATEGORIA
 
-CREATE TABLE categoria
+CREATE TABLE INVENTARIO_G20827907.CATEGORIA
 (
     id_cat INT NOT NULL AUTO_INCREMENT,
     nomb_cat VARCHAR(20),
-    PRIMARY KEY(id_cat)
+    CONSTRAINT id_cat_pkey PRIMARY KEY(id_cat)
 )
 ;
 
--- Table marca
+-- Table MARCA
 
-CREATE TABLE marca
+CREATE TABLE INVENTARIO_G20827907.MARCA
 (
     id_marca INT NOT NULL AUTO_INCREMENT,
     nomb_marca VARCHAR(20) NOT NULL UNIQUE,
-    PRIMARY KEY(id_marca)
+    CONSTRAINT id_marca_pkey PRIMARY KEY(id_marca)
 )
 ;
 
--- Table estado
+-- Table ESTADO
 
-CREATE TABLE estado
+CREATE TABLE INVENTARIO_G20827907.ESTADO
 (
     id_est INT NOT NULL AUTO_INCREMENT,
     nomb_est VARCHAR(20) NOT NULL,
     siglas VARCHAR(3),
-    PRIMARY KEY(id_est)
+    CONSTRAINT id_est_pkey PRIMARY KEY(id_est)
 )
 ;
 
--- Table ciudad
+-- Table CIUDAD
 
 /* Creada de esta forma no es necesario pasarle en la inserción la
 primary key (campo autoincrement)
 */
 
-CREATE TABLE ciudad
+CREATE TABLE INVENTARIO_G20827907.CIUDAD
 (
     id_ciud INT NOT NULL AUTO_INCREMENT,
     nomb_ciud VARCHAR(20) NOT NULL,
     siglas VARCHAR(3),
     id_est INT NOT NULL,
-    PRIMARY KEY(id_ciud),
-    FOREIGN KEY(id_est) REFERENCES estado(id_est) ON DELETE CASCADE ON UPDATE CASCADE /* Al eliminar/actualizar un registro en tabla 
+    CONSTRAINT id_ciud_pkey PRIMARY KEY(id_ciud),
+    CONSTRAINT id_est_fkey FOREIGN KEY(id_est) REFERENCES ESTADO(id_est) /* ON DELETE CASCADE ON UPDATE CASCADE -- Al eliminar/actualizar un registro en tabla 
                                                                                         «padre» se elimina/actualiza en cascada donde es
                                                                                         foreign key */
 )
 ;
 
--- Table subcategoria
+-- Table SUBCATEGORIA
 
-CREATE TABLE subcategoria
+CREATE TABLE INVENTARIO_G20827907.SUBCATEGORIA
 (
     id_sub INT NOT NULL AUTO_INCREMENT,
     nomb_subc VARCHAR(20),
     id_cat INT NOT NULL,
-    PRIMARY KEY(id_sub),
-    FOREIGN KEY(id_cat) REFERENCES categoria(id_cat)
+    CONSTRAINT id_sub_pkey PRIMARY KEY(id_sub),
+    CONSTRAINT id_cat_fkey FOREIGN KEY(id_cat) REFERENCES CATEGORIA(id_cat)
 )
 ;
 
--- Table producto
+-- Table PRODUCTO
 
-CREATE TABLE producto
+CREATE TABLE INVENTARIO_G20827907.PRODUCTO
 (
     id_prod INT NOT NULL AUTO_INCREMENT,
     nomb_prod VARCHAR(30) NOT NULL,
     id_marca INT NOT NULL,
     pvp FLOAT,
     id_sub INT NOT NULL,
-    PRIMARY KEY(id_prod),
-    FOREIGN KEY(id_marca) REFERENCES marca(id_marca),
-    FOREIGN KEY(id_sub) REFERENCES subcategoria(id_sub) ON DELETE NO ACTION ON UPDATE NO ACTION /* No se puede eliminar/actualizar en la tabla
+    CONSTRAINT id_prod_pkey PRIMARY KEY(id_prod),
+    CONSTRAINT id_marca_fkey FOREIGN KEY(id_marca) REFERENCES MARCA(id_marca),
+    CONSTRAINT id_sub_fkey FOREIGN KEY(id_sub) REFERENCES SUBCATEGORIA(id_sub) /* ON DELETE NO ACTION ON UPDATE NO ACTION -- No se puede eliminar/actualizar en la tabla
                                                                                                 padre sin antes eliminar/actualizar en la tabla
                                                                                                 hijo */
 )
 ;
 
--- Table tienda
+-- Table TIENDA
 
-CREATE TABLE tienda
+CREATE TABLE INVENTARIO_G20827907.TIENDA
 (
     id_tiend INT NOT NULL AUTO_INCREMENT,
     nomb_tiend VARCHAR(40) NOT NULL,
@@ -99,14 +99,14 @@ CREATE TABLE tienda
     fax VARCHAR(15),
     capacidad_prod INT,
     id_ciud INT NOT NULL,
-    PRIMARY KEY(id_tiend),
-    FOREIGN KEY(id_ciud) REFERENCES ciudad(id_ciud)
+    CONSTRAINT id_tiend_pkey PRIMARY KEY(id_tiend),
+    CONSTRAINT id_ciud_fkey FOREIGN KEY(id_ciud) REFERENCES CIUDAD(id_ciud)
 )
 ;
 
--- Table almacen
+-- Table ALMACEN
 
-CREATE TABLE almacen
+CREATE TABLE INVENTARIO_G20827907.ALMACEN
 (
     id_alm INT NOT NULL AUTO_INCREMENT,
     nomb_alm VARCHAR(40) NOT NULL,
@@ -115,28 +115,28 @@ CREATE TABLE almacen
     dimensiones VARCHAR(15),
     capacidad_prod INT,
     id_ciud INT NOT NULL,
-    PRIMARY KEY(id_alm),
-    FOREIGN KEY(id_ciud) REFERENCES ciudad(id_ciud)
+    CONSTRAINT id_alm_pkey PRIMARY KEY(id_alm),
+    CONSTRAINT id_ciud_fkey2 FOREIGN KEY(id_ciud) REFERENCES CIUDAD(id_ciud)
 )
 ;
 
--- Table proveedor
+-- Table PROVEEDOR
 
-CREATE TABLE proveedor
+CREATE TABLE INVENTARIO_G20827907.PROVEEDOR
 (
     id_prov INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(40) NOT NULL,
     rif VARCHAR(15),
     telf VARCHAR(15),
     id_ciud INT NOT NULL,
-    PRIMARY KEY(id_prov),
-    FOREIGN KEY(id_ciud) REFERENCES ciudad(id_ciud)
+    CONSTRAINT id_prov_pkey PRIMARY KEY(id_prov),
+    CONSTRAINT id_ciud_fkey3 FOREIGN KEY(id_ciud) REFERENCES CIUDAD(id_ciud)
 )
 ;
 
--- Table tiene
+-- Table TIENE
 
-CREATE TABLE tiene
+CREATE TABLE INVENTARIO_G20827907.TIENE
 (
     fecha DATE NOT NULL,
     id_prod INT NOT NULL,
@@ -145,15 +145,15 @@ CREATE TABLE tiene
     cant_exist INT,
     nopa INT,
     nmrp INT,
-    PRIMARY KEY(fecha, id_prod, id_tiend),
-    FOREIGN KEY(id_prod) REFERENCES producto(id_prod),
-    FOREIGN KEY(id_tiend) REFERENCES tienda(id_tiend)
+    CONSTRAINT fecha_id_prod_tiend_pkey PRIMARY KEY(fecha, id_prod, id_tiend),
+    CONSTRAINT id_prod_fkey FOREIGN KEY(id_prod) REFERENCES PRODUCTO(id_prod),
+    CONSTRAINT id_tiend_fkey FOREIGN KEY(id_tiend) REFERENCES TIENDA(id_tiend)
 )
 ;
 
--- Table almacena
+-- Table ALMACENA
 
-CREATE TABLE almacena
+CREATE TABLE INVENTARIO_G20827907.ALMACENA
 (
     fecha DATE NOT NULL,
     id_alm INT NOT NULL,
@@ -162,15 +162,15 @@ CREATE TABLE almacena
     cant_exist INT,
     nopal INT,
     nmrs INT,
-    PRIMARY KEY(fecha, id_alm, id_prod),
-    FOREIGN KEY(id_alm) REFERENCES almacen(id_alm),
-    FOREIGN KEY(id_prod) REFERENCES producto(id_prod)
+    CONSTRAINT fecha_id_alm_prod_pkey PRIMARY KEY(fecha, id_alm, id_prod),
+    CONSTRAINT id_alm_fkey FOREIGN KEY(id_alm) REFERENCES ALMACEN(id_alm),
+    CONSTRAINT id_prod_fkey2 FOREIGN KEY(id_prod) REFERENCES PRODUCTO(id_prod)
 )
 ;
 
--- Table provee
+-- Table PROVEE
 
-CREATE TABLE provee
+CREATE TABLE INVENTARIO_G20827907.PROVEE
 (
     fecha_rec DATE NOT NULL,
     fecha_env DATE NOT NULL,
@@ -181,25 +181,25 @@ CREATE TABLE provee
     costo_prod FLOAT,
     costo_env FLOAT,
     costo_total FLOAT,
-    PRIMARY KEY(fecha_rec, fecha_env, id_prov, id_alm, id_prod),
-    FOREIGN KEY(id_prov) REFERENCES proveedor(id_prov),
-    FOREIGN KEY(id_alm) REFERENCES almacen(id_alm),
-    FOREIGN KEY(id_prod) REFERENCES producto(id_prod)
+    CONSTRAINT fecha_rec_env_id_prov_alm_prod_pkey PRIMARY KEY(fecha_rec, fecha_env, id_prov, id_alm, id_prod),
+    CONSTRAINT id_prov_fkey2 FOREIGN KEY(id_prov) REFERENCES PROVEEDOR(id_prov),
+    CONSTRAINT id_alm_fkey2 FOREIGN KEY(id_alm) REFERENCES ALMACEN(id_alm),
+    CONSTRAINT id_prod_fkey3 FOREIGN KEY(id_prod) REFERENCES PRODUCTO(id_prod)
 )
 ;
 
--- Table abastece
+-- Table ABASTECE
 
-CREATE TABLE abastece
+CREATE TABLE INVENTARIO_G20827907.ABASTECE
 (
     fecha_rec DATE NOT NULL,
     fecha_desc DATE NOT NULL,
     id_alm INT NOT NULL,
     id_tiend INT NOT NULL,
     id_prod INT NOT NULL,
-    PRIMARY KEY(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod),
-    FOREIGN KEY(id_alm) REFERENCES almacen(id_alm),
-    FOREIGN KEY(id_tiend) REFERENCES tienda(id_tiend),
-    FOREIGN KEY(id_prod) REFERENCES producto(id_prod)
+    CONSTRAINT fecha_rec_desc_id_alm_tiend_prod_pkey PRIMARY KEY(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod),
+    CONSTRAINT id_alm_fkey3 FOREIGN KEY(id_alm) REFERENCES ALMACEN(id_alm),
+    CONSTRAINT id_tiend_fkey2 FOREIGN KEY(id_tiend) REFERENCES TIENDA(id_tiend),
+    CONSTRAINT id_prod_fkey4 FOREIGN KEY(id_prod) REFERENCES PRODUCTO(id_prod)
 )
 ;
