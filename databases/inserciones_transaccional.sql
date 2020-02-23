@@ -70,46 +70,52 @@ INSERT INTO ESTADO(nomb_est, siglas)
 
 -- Insert table CIUDAD
 
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Barcelona', 'BRC', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Barinas', 'BRN', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Caracas', 'CRC', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Coro', 'COR', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('CIUDAD Bolivar', 'CDB', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Cumana', 'CMN', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Guanare', 'GNR', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('La Asuncion', 'LAS', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('La Guaira', 'LGR', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Los Teques', 'LTQ', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Maracay', 'MCY', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Maracaibo', 'MCB', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Maturin', 'MTN', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Merida', 'MER', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('San Cristobal', 'SCT', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('San Felipe', 'SFP', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('San Fernando de Apure', 'SFA', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('San Juan de Los Morros', 'SJM', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Trujillo', 'TRJ', );
-INSERT INTO CIUDAD(nomb_ciu, siglas, id_est)
-    VALUES('Tucupita', 'TCP', );
+-- Falta Yaracuy y Amazonas
+
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Barcelona', 'BRC', 3);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Barinas', 'BRN', 6);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Barquisimeto', 'BRQ', 14);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Caracas', 'CRC', 11);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Coro', 'COR', 12);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('CIUDAD Bolivar', 'CDB', 7);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Cumana', 'CMN', 20);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Guanare', 'GNR', 19);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('La Asuncion', 'LAS', 18);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('La Guaira', 'LGR', 23);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Los Teques', 'LTQ', 16);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Maracay', 'MCY', 5);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Maracaibo', 'MCB', 1);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Maturin', 'MTN', 17);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Merida', 'MER', 15);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('San Cristobal', 'SCT', 21);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('San Felipe', 'SFP', 9);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('San Fernando de Apur', 'SFA', 4);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('San Juan de Los Morr', 'SJM', 13);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Trujillo', 'TRJ', 22);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Tucupita', 'TCP', 10);
+INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+    VALUES('Valencia', 'VAL', 8);
 
 
 -- Insert table SUBCATEGORIA
