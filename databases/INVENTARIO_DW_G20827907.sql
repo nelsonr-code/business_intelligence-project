@@ -1,6 +1,6 @@
 /*
 Created: 16/2/2020
-Modified: 17/2/2020
+Modified: 28/2/2020
 Database: MySQL 8.0
 */
 
@@ -39,6 +39,7 @@ CREATE TABLE INVENTARIO_DW_G20827907.DIM_LOCALIDAD
     desc_estado VARCHAR(20),
     id_ciudad INT,
     desc_ciudad VARCHAR(20),
+    codigo_concatenado INTEGER,
     CONSTRAINT dim_localidad_pkey PRIMARY KEY(sk_dim_local)
 )
 ;

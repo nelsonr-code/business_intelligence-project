@@ -1,6 +1,6 @@
 /*
 Created: 17/2/2020
-Modified: 25/2/2020
+Modified: 28/2/2020
 Database: MySQL 8.0
 */
 
@@ -154,8 +154,8 @@ INSERT INTO ESTADO(nomb_est, siglas)
     VALUES('Yaracuy', 'YRC');
 INSERT INTO ESTADO(nomb_est, siglas)
     VALUES('Zulia', 'ZLA');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('PRUEBA', 'PBA');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('PRUEBA', 'PBA');
 
 
 -- Insert table CIUDAD
@@ -208,8 +208,8 @@ INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
     VALUES('Tucupita', 'TCP', 9);
 INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
     VALUES('Valencia', 'VAL', 7);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('MACTCH PRUEBA', 'MPB', 25);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('MACTCH PRUEBA', 'MPB', 25);
 
 
 -- Insert table SUBCATEGORIA

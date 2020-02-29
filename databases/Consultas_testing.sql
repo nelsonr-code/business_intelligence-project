@@ -60,7 +60,19 @@ ALTER TABLE dimensional.dim_location ADD COLUMN SK_location_KTL BIGINT;
 UPDATE dimensional.dim_location SET SK_location_KTL=SK_location;
 ALTER TABLE dimensional.dim_location DROP COLUMN SK_location;
 ALTER TABLE dimensional.dim_location RENAME SK_location_KTL TO SK_location;
-
-;
 CREATE INDEX idx_dim_location_lookup ON dimensional.dim_location(codigo_concatenado)
+;
+
+/* Este DDL es hecho en insert/ update table. Con él resuelve lo de
+no actualizar la SK con cada nueva inserción 
+*/
+ALTER TABLE dim_localidad ADD COLUMN sk_dim_localidad_pdi INTEGER
+;
+UPDATE dim_localidad SET sk_dim_localidad_pdi = sk_dim_local
+;
+ALTER TABLE dim_localidad DROP COLUMN sk_dim_local
+;
+ALTER TABLE dim_localidad RENAME sk_dim_localidad_pdi TO sk_dim_local
+;
+CREATE INDEX idx_dim_localidad_lookup ON dim_localidad(codigo_concatenado)
 ;
