@@ -35,8 +35,8 @@ CREATE TABLE INVENTARIO_DW_G20827907.DIM_PRODUCTO
 CREATE TABLE INVENTARIO_DW_G20827907.DIM_LOCALIDAD
 (
     sk_dim_local INT NOT NULL,
-    id_est INT,
-    desc_est VARCHAR(20),
+    id_estado INT,
+    desc_estado VARCHAR(20),
     id_ciudad INT,
     desc_ciudad VARCHAR(20),
     CONSTRAINT dim_localidad_pkey PRIMARY KEY(sk_dim_local)
@@ -56,7 +56,8 @@ CREATE TABLE INVENTARIO_DW_G20827907.DIM_TIENDA
     fax VARCHAR(15),
     capacidad INT,
     CONSTRAINT dim_tienda_pkey PRIMARY KEY(sk_dim_tiend)
-);
+)
+;
 
 
 -- dimension almacen
@@ -71,7 +72,8 @@ CREATE TABLE INVENTARIO_DW_G20827907.DIM_ALMACEN
     dimensiones VARCHAR(15),
     capacidad INT,
     CONSTRAINT dim_almacen_pkey PRIMARY KEY(sk_dim_almacen)
-);
+)
+;
 
 
 -- dimension proveedor
@@ -84,7 +86,8 @@ CREATE TABLE INVENTARIO_DW_G20827907.DIM_PROVEEDOR
     rif VARCHAR(15),
     telf VARCHAR(15),
     CONSTRAINT dim_proveedor_pkey PRIMARY KEY(sk_dim_prov)
-);
+)
+;
 
 
 -- dimension tiempo
