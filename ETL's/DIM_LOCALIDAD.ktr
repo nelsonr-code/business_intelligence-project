@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2020/02/22 14:43:00.322</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2020/02/29 12:12:00.891</modified_date>
+    <modified_date>2020/02/29 12:41:29.822</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -533,11 +533,6 @@
     <hop>
       <from>Select values</from>
       <to>Insert / update DIM_LOCALIDAD</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -834,74 +829,6 @@ var sk_dim_local = max_sk + sk_autoincrement</jsScript_script>
     <GUI>
       <xloc>352</xloc>
       <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Insert / update</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>MySQL dimensional</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>dim_localidad</table>
-      <key>
-        <name>codigo_concatenado</name>
-        <field>codigo_concatenado</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>codigo_concatenado</name>
-        <rename>codigo_concatenado</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>id_estado</name>
-        <rename>id_estado</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>desc_estado</name>
-        <rename>desc_estado</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>id_ciudad</name>
-        <rename>id_ciudad</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>desc_ciudad</name>
-        <rename>desc_ciudad</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>sk_dim_local</name>
-        <rename>sk_dim_local</rename>
-        <update>N</update>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>800</xloc>
-      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
