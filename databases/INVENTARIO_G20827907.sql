@@ -96,6 +96,7 @@ CREATE TABLE INVENTARIO_G20827907.TIENDA
     id_tiend INT NOT NULL AUTO_INCREMENT,
     nomb_tiend VARCHAR(40) NOT NULL,
     rif VARCHAR(15),
+    telf VARCHAR(15),
     fax VARCHAR(15),
     capacidad_prod INT,
     id_ciud INT NOT NULL,
@@ -133,6 +134,9 @@ CREATE TABLE INVENTARIO_G20827907.PROVEEDOR
     CONSTRAINT id_ciud_fkey3 FOREIGN KEY(id_ciud) REFERENCES CIUDAD(id_ciud)
 )
 ;
+
+
+-- TABLAS RELACION ------------------------------------------------------------
 
 -- Table TIENE
 
