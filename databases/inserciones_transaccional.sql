@@ -1,10 +1,25 @@
 /*
 Created: 17/2/2020
-Modified: 29/2/2020
+Modified: 1/3/2020
 Database: MySQL 8.0
 */
 
 -- Insert table CATEGORIA
+
+INSERT INTO INVENTARIO_G20827907.CATEGORIA(id_cat, nomb_cat)
+    VALUES(1, 'Children Bicycles')
+INSERT INTO INVENTARIO_G20827907.CATEGORIA(id_cat, nomb_cat)
+    VALUES(2, 'Comfort Bicycles')
+INSERT INTO INVENTARIO_G20827907.CATEGORIA(id_cat, nomb_cat)
+    VALUES(3, 'Cruisers Bicycles')
+INSERT INTO INVENTARIO_G20827907.CATEGORIA(id_cat, nomb_cat)
+    VALUES(4, 'Cyclocross Bicycles')
+INSERT INTO INVENTARIO_G20827907.CATEGORIA(id_cat, nomb_cat)
+    VALUES(5, 'Electric Bikes')
+INSERT INTO INVENTARIO_G20827907.CATEGORIA(id_cat, nomb_cat)
+    VALUES(6, 'Mountain Bikes')
+INSERT INTO INVENTARIO_G20827907.CATEGORIA(id_cat, nomb_cat)
+    VALUES(7, 'Road Bikes')
 
 INSERT INTO CATEGORIA(id_cat, nomb_cat)
     VALUES(1, 'Dulceria bomboneria');
@@ -90,18 +105,28 @@ INSERT INTO CATEGORIA(id_cat, nomb_cat)
     VALUES(41, 'Floristeria');
 INSERT INTO CATEGORIA(id_cat, nomb_cat)
     VALUES(42, 'Arte');
--- INSERT INTO CATEGORIA(id_cat, nomb_cat)
---     VALUES(,  );
--- INSERT INTO CATEGORIA(id_cat, nomb_cat)
---     VALUES(,  );
--- INSERT INTO CATEGORIA(id_cat, nomb_cat)
---     VALUES(,  );
 
 
 -- Insert table MARCA
 
-INSERT INTO MARCA(id_marca, nomb_marca)
-    VALUES();
+INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
+    VALUES(1, 'Electra')
+INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
+    VALUES(2, 'Haro')
+INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
+    VALUES(3, 'Heller')
+INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
+    VALUES(4, 'Pure Cycles')
+INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
+    VALUES(5, 'Ritchey')
+INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
+    VALUES(6, 'Strider')
+INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
+    VALUES(7, 'Sun Bicycles')
+INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
+    VALUES(8, 'Surly')
+INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
+    VALUES(9, 'Trek')
 
 
 -- Insert table ESTADO
@@ -208,20 +233,128 @@ INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
     VALUES('Tucupita', 'TCP', 9);
 INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
     VALUES('Valencia', 'VAL', 7);
--- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
---     VALUES('MACTCH PRUEBA', 'MPB', 25);
 
 
 -- Insert table SUBCATEGORIA
 
-INSERT INTO SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES();
+INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
+    VALUES(10, 'SUBC Children Bicycles', 1)
+INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
+    VALUES(20, 'SUBC Comfort Bicycles', 2)
+INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
+    VALUES(30, 'SUBC Cruisers Bicycles', 3)
+INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
+    VALUES(40, 'SUBC Cyclocross Bicycles', 4)
+INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
+    VALUES(50, 'SUBC Electric Bikes', 5)
+INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
+    VALUES(60, 'SUBC Mountain Bikes', 6)
+INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
+    VALUES(70, 'SUBC Road Bikes', 7)
 
 
 -- Insert table PRODUCTO
 
-INSERT INTO PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
-    VALUES();
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(1, 'Trek 820 - 2016', 9, 379.99, 70)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(2, 'Ritchey Timberwolf Frameset - 2016', 5, 749.99, 70)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(3, 'Surly Wednesday Frameset - 2016', 8, 999.99, 50)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(4, 'Trek Fuel EX 8 29 - 2016', 9, 2899.99, 50)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(5, 'Heller Shagamaw Frame - 2016', 3, 1320.99, 50)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(6, 'Surly Ice Cream Truck Frameset - 2016', 8, 469.99, 50)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(7, 'Trek Slash 8 27.5 - 2016', 9, 3999.99, 50)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(8, 'Trek Remedy 29 Carbon Frameset - 2016', 9, 1799.99, 40)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(9, 'Trek Conduit+ - 2016', 9, 2999.99, 40)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(10, 'Surly Straggler - 2016', 8, 1549, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(11, 'Surly Straggler 650b - 2016', 8, 1680.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(12, 'Electra Townie Original 21D - 2016', 1, 549.99, 20)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(13, 'Electra Cruiser 1 (24-Inch) - 2016', 1, 269.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(14, 'Electra Girl''s Hawaii 1 (16-inch) - 2015/2016', 1, 269.99, 30)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(15, 'Electra Moto 1 - 2016', 1, 529.99, 60)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(16, 'Electra Townie Original 7D EQ - 2016', 1, 599.99, 60)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(17, 'Pure Cycles Vine 8-Speed - 2016', 4, 429, 60)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(18, 'Pure Cycles Western 3-Speed - Women''s - 2015/2016', 4, 449, 50)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub) 
+    VALUES(19, 'Pure Cycles William 3-Speed - 2016', 4, 449, 60)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(20, 'Electra Townie Original 7D EQ - Women''s - 2016', 1, 599.99, 40)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(21, 'Electra Cruiser 1 (24-Inch) - 2016', 1, 269.99, 40)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(22, 'Electra Girl''s Hawaii 1 (16-inch) - 2015/2016', 1, 269.99, 20)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(23, 'Electra Girl''s Hawaii 1 (20-inch) - 2015/2016', 1, 299.99, 20)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(24, 'Electra Townie Original 21D - 2016', 1, 549.99, 20)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(25, 'Electra Townie Original 7D - 2015/2016', 1, 499.99, 20)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(26, 'Electra Townie Original 7D EQ - 2016', 1, 599.99, 40)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(27, 'Surly Big Dummy Frameset - 2017', 8, 999.99, 40)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(28, 'Surly Karate Monkey 27.5+ Frameset - 2017', 8, 2499.99, 70)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(29, 'Trek X-Caliber 8 - 2017', 9, 999.99, 70)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(30, 'Surly Ice Cream Truck Frameset - 2017', 8, 999.99, 70)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(31, 'Surly Wednesday - 2017', 8, 1632.99, 60)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(32, 'Trek Farley Alloy Frameset - 2017', 9, 469.99, 60)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(33, 'Surly Wednesday Frameset - 2017', 8, 469.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(34, 'Trek Session DH 27.5 Carbon Frameset - 2017', 9, 469.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(35, 'Sun Bicycles Spider 3i - 2017', 7, 832.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(36, 'Surly Troll Frameset - 2017', 8, 832.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(37, 'Haro Flightline One ST - 2017', 2, 379.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(38, 'Haro Flightline Two 26 Plus - 2017', 2, 549.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(39, 'Trek Stache 5 - 2017', 9, 1499.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(40, 'Trek Fuel EX 9.8 29 - 2017', 9, 4999.99, 10)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(41, 'Haro Shift R3 - 2017', 2, 1469.99, 30)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(42, 'Trek Fuel EX 5 27.5 Plus - 2017', 9, 2299.99, 30)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(43, 'Trek Fuel EX 9.8 27.5 Plus - 2017', 9, 5299.99, 30)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(44, 'Haro SR 1.1 - 2017', 2, 539.99, 30)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(45, 'Haro SR 1.2 - 2017', 2, 869.99, 30)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(46, 'Haro SR 1.3 - 2017', 2, 1409.99, 20)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(47, 'Trek Remedy 9.8 - 2017', 9, 5299.99, 20)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(48, 'Trek Emonda S 4 - 2017', 9, 1499.99, 20)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(49, 'Trek Domane SL 6 - 2017', 9, 3499.99, 20)
+INSERT INTO INVENTARIO_G20827907.PRODUCTO(id_prod, nomb_prod, id_marca, pvp, id_sub)
+    VALUES(50, 'Trek Silque SLR 7 Women''s - 2017', 9, 5999.99, 60)
 
 
 -- Insert table TIENDA
@@ -1357,3 +1490,53 @@ INSERT INTO PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_p
 
 INSERT INTO ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
     VALUES();
+
+
+SELECT
+CONCAT(P.country_id, C.city_id, D.address_id) :: integer  as codigo_concatenado
+, P.country_id as cod_country
+, P.country as desc_country
+, C.city_id as cod_city
+, C.city as desc_city
+, D.address_id as cod_location
+, D. address as desc_location
+, D.address2 as location_2
+, D.district as district
+, D.postal_code as postal_code
+, D.phone as phone
+FROM country P, city C, address D
+WHERE P.country_id = C.country_id
+AND C.city_id = D.city_id
+
+UNION
+
+SELECT
+ CONCAT(P.country_id, C.city_id) :: integer as codigo_concatenado
+, P.country_id as cod_country
+, P.country as desc_country
+, C.city_id as cod_city
+, C.city as desc_city
+, null as cod_location
+, null as desc_location
+, null as location_2
+, null as district
+, null as postal_code
+, null as phone
+FROM country P, city C
+WHERE P.country_id = C.country_id
+
+UNION
+
+SELECT
+CONCAT(P.country_id) :: integer as codigo_concatenado
+, P.country_id as cod_country
+, P.country as desc_country
+, null as cod_city
+, null as desc_city
+, null as cod_location
+, null as desc_location
+, null as location_2
+, null as district
+, null as postal_code
+, null as phone
+FROM country P
