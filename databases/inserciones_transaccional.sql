@@ -238,19 +238,19 @@ INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
 -- Insert table SUBCATEGORIA
 
 INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(10, 'SUBC Children Bicycles', 1)
+    VALUES(10, 'SUBCATEGORIA 1', 1);
 INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(20, 'SUBC Comfort Bicycles', 2)
+    VALUES(20, 'SUBCATEGORIA 2', 2);
 INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(30, 'SUBC Cruisers Bicycles', 3)
+    VALUES(30, 'SUBCATEGORIA 3', 3);
 INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(40, 'SUBC Cyclocross Bicycles', 4)
+    VALUES(40, 'SUBCATEGORIA 4', 4);
 INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(50, 'SUBC Electric Bikes', 5)
+    VALUES(50, 'SUBCATEGORIA 5', 5);
 INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(60, 'SUBC Mountain Bikes', 6)
+    VALUES(60, 'SUBCATEGORIA 6', 6);
 INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(70, 'SUBC Road Bikes', 7)
+    VALUES(70, 'SUBCATEGORIA 7', 7);
 
 
 -- Insert table PRODUCTO
