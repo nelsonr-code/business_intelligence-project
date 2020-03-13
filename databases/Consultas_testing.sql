@@ -29,7 +29,7 @@ USE INVENTARIO_G20827907
 
 DROP DATABASE INVENTARIO_G20827907;
 
-DROP TABLE INVENTARIO_G20827907.tablename;
+DROP TABLE INVENTARIO_G20827907.
 
 ALTER TABLE INVENTARIO_G20827907.tablename DROP COLUMN id_tiend
 
@@ -106,103 +106,106 @@ FROM INVENTARIO_G20827907.CATEGORIA
 SELECT *
 FROM INVENTARIO_G20827907.SUBCATEGORIA
 
+--ABASTECE
+SELECT *
+FROM INVENTARIO_G20827907.ABASTECE
+
 -- HIERARCHY PRODUCTO
+
 -- Categoria > Sub-categoria > Marca > Producto
-SELECT CAST(CONCAT(P.id_prod, C.id_cat, S.id_sub, M.id_marca) AS UNSIGNED) AS codigo_concatenado
-,   P.id_prod
-,   P.nomb_prod AS desc_prod
-,   P.pvp
+
+SELECT CAST(CONCAT(C.id_cat, S.id_sub, M.id_marca, P.id_prod) AS UNSIGNED) AS codigo_concatenado
 ,   C.id_cat
 ,   C.nomb_cat AS desc_cat
-,   S.id_sub
+,   S.id_sub AS id_subc
 ,   S.nomb_subc AS desc_subc
 ,   M.id_marca
 ,   M.nomb_marca
-FROM INVENTARIO_G20827907.PRODUCTO P
+,   P.id_prod
+,   P.nomb_prod AS desc_prod
+,   P.pvp
+FROM INVENTARIO_G20827907.SUBCATEGORIA S
+INNER JOIN INVENTARIO_G20827907.CATEGORIA C
+ON C.id_cat = S.id_cat
+INNER JOIN INVENTARIO_G20827907.PRODUCTO P 
+ON S.id_sub = P.id_sub
 INNER JOIN INVENTARIO_G20827907.MARCA M
 ON P.id_marca = M.id_marca
-INNER JOIN INVENTARIO_G20827907.SUBCATEGORIA S
-ON S.id_sub = P.id_sub
-INNER JOIN INVENTARIO_G20827907.CATEGORIA C
-ON S.id_cat = C.id_cat
 
 UNION
 
-SELECT CAST(CONCAT(P.id_prod, S.id_sub, M.id_marca) AS UNSIGNED) AS codigo_concatenado
-,   P.id_prod
-,   P.nomb_prod AS desc_prod
-,   P.pvp
-,   S.id_sub
+SELECT CAST(CONCAT(C.id_cat, S.id_sub, M.id_marca) AS UNSIGNED) AS codigo_concatenado
+,   C.id_cat
+,   C.nomb_cat AS desc_cat
+,   S.id_sub AS id_subc
 ,   S.nomb_subc AS desc_subc
 ,   M.id_marca
 ,   M.nomb_marca
-,   NULL AS id_cat
-,   NULL AS nomb_cat
-FROM INVENTARIO_G20827907.PRODUCTO P
-INNER JOIN INVENTARIO_G20827907.MARCA M
-ON P.id_marca = M.id_marca
-INNER JOIN INVENTARIO_G20827907.SUBCATEGORIA S
-ON S.id_sub = P.id_sub
+,   NULL AS id_prod
+,   NULL AS desc_prod
+,   NULL AS pvp
+FROM INVENTARIO_G20827907.MARCA M, INVENTARIO_G20827907.SUBCATEGORIA S
+INNER JOIN INVENTARIO_G20827907.CATEGORIA C
+ON C.id_cat = S.id_cat
+-- INNER JOIN INVENTARIO_G20827907.PRODUCTO P 
+-- ON S.id_sub = P.id_sub
+-- INNER JOIN INVENTARIO_G20827907.MARCA M
+-- ON P.id_marca = M.id_marca
 
 UNION
 
 SELECT CAST(CONCAT(C.id_cat, S.id_sub) AS UNSIGNED) AS codigo_concatenado
-,   NULL AS id_prod
-,   NULL AS desc_prod
-,   NULL AS pvp
-,   S.id_sub
-,   S.nomb_subc AS desc_subc
-,   NULL AS id_marca
-,   NULL AS desc_marca
 ,   C.id_cat
 ,   C.nomb_cat AS desc_cat
-FROM INVENTARIO_G20827907.CATEGORIA C
-INNER JOIN INVENTARIO_G20827907.SUBCATEGORIA S
-ON C.id_cat = C.id_cat
-
-UNION
-
-SELECT CAST(CONCAT(id_marca) AS UNSIGNED) AS codigo_concatenado
-,   id_marca
-,   nomb_marca AS desc_marca
+,   S.id_sub AS id_subc
+,   S.nomb_subc AS desc_subc
+,   NULL AS id_marca
+,   NULL AS nomb_marca
 ,   NULL AS id_prod
 ,   NULL AS desc_prod
 ,   NULL AS pvp
-,   NULL AS id_sub
-,   NULL AS desc_subc
-,   NULL AS id_cat
-,   NULL AS desc_cat
-FROM INVENTARIO_G20827907.MARCA
+FROM INVENTARIO_G20827907.SUBCATEGORIA S
+INNER JOIN INVENTARIO_G20827907.CATEGORIA C
+ON C.id_cat = S.id_cat
+-- INNER JOIN INVENTARIO_G20827907.PRODUCTO P 
+-- ON S.id_sub = P.id_sub
+-- INNER JOIN INVENTARIO_G20827907.MARCA M
+-- ON P.id_marca = M.id_marca
 
 UNION
 
 SELECT CAST(CONCAT(id_cat) AS UNSIGNED) AS codigo_concatenado
 ,   id_cat
 ,   nomb_cat AS desc_cat
+,   NULL AS id_subc
+,   NULL AS desc_subc
 ,   NULL AS id_marca
-,   NULL AS desc_marca
+,   NULL AS nomb_marca
 ,   NULL AS id_prod
 ,   NULL AS desc_prod
 ,   NULL AS pvp
-,   NULL AS id_sub
-,   NULL AS desc_subc
 FROM INVENTARIO_G20827907.CATEGORIA
+-- INNER JOIN INVENTARIO_G20827907.SUBCATEGORIA S
+-- ON C.id_cat = S.id_cat
+-- INNER JOIN INVENTARIO_G20827907.PRODUCTO P 
+-- ON S.id_sub = P.id_sub
+-- INNER JOIN INVENTARIO_G20827907.MARCA M
+-- ON P.id_marca = M.id_marca
 
+-- REVISAR SI VA ESTA UNION
+UNION
 
--- SELECT CAST(CONCAT(P.id_prod, C.id_cat) AS UNSIGNED) AS codigo_cocatenado
--- ,	P.id_prod
--- ,   P.nomb_prod AS desc_prod
--- ,   P.pvp
--- ,   C.id_cat
--- ,   C.nomb_cat AS desc_cat
--- ,   S.id_sub
--- ,   S.nomb_subc AS desc_subc
--- ,   M.id_marca
--- ,   M.nomb_marca
--- FROM INVENTARIO_G20827907.PRODUCTO P, INVENTARIO_G20827907.MARCA M
--- ,   INVENTARIO_G20827907.SUBCATEGORIA S, INVENTARIO_G20827907.CATEGORIA C
--- WHERE P.id_marca = M.id_marca
--- AND P.id_sub = S.id_sub
+SELECT CAST(CONCAT(id_marca) AS UNSIGNED) AS codigo_concatenado
+,   NULL AS id_cat
+,   NULL AS desc_cat
+,   NULL AS id_subc
+,   NULL AS desc_subc
+,   id_marca
+,   nomb_marca AS desc_marca
+,   NULL AS id_prod
+,   NULL AS desc_prod
+,   NULL AS pvp
+FROM INVENTARIO_G20827907.MARCA
 
 
 -- INVENTARIO_DW_G20827907------------------------------------------------ 
@@ -252,10 +255,61 @@ FROM INVENTARIO_DW_G20827907.DIM_PROVEEDOR
 
 DELETE FROM 
 INVENTARIO_DW_G20827907.DIM_PROVEEDOR
-WHERE sk_dim_prov = 
+WHERE sk_dim_prov 
 
 DELETE FROM 
 INVENTARIO_DW_G20827907.DIM_PROVEEDOR
+
+-- DIM_TIEMPO
+SELECT *
+FROM INVENTARIO_DW_G20827907.DIM_TIEMPO
+
+DELETE FROM
+INVENTARIO_DW_G20827907.DIM_TIEMPO
+
+-- FACT TABLE TIENDA
+
+SELECT E.id_est, CD.id_ciud
+,   sk_dim_tiend
+,   sk_dim_local
+-- ,   sk_dim_almacen
+-- ,   fecha_rec AS fecha_pedido
+-- ,   fecha_desc AS fecha_recibido
+,   sk_dim_prod
+,   T.fecha
+,   P.id_prod
+,   P.pvp
+,   TD.id_tiend
+,   cant_vend
+,   cant_exist
+,   nopa
+,   nmrp
+FROM INVENTARIO_G20827907.TIENE T
+INNER JOIN INVENTARIO_G20827907.PRODUCTO P
+ON T.id_prod = P.id_prod
+INNER JOIN INVENTARIO_G20827907.TIENDA TD
+ON T.id_tiend = TD.id_tiend
+INNER JOIN INVENTARIO_G20827907.CIUDAD CD
+ON TD.id_ciud = CD.id_ciud
+INNER JOIN INVENTARIO_G20827907.ESTADO E
+ON CD.id_est = E.id_est
+INNER JOIN INVENTARIO_DW_G20827907.DIM_TIENDA DIM_TD
+ON TD.id_tiend = DIM_TD.id_tiend
+INNER JOIN INVENTARIO_DW_G20827907.DIM_LOCALIDAD DIM_L
+ON TD.id_ciud = DIM_L.id_ciudad AND E.id_est = DIM_L.id_estado
+INNER JOIN INVENTARIO_DW_G20827907.DIM_PRODUCTO DIM_P
+ON P.id_prod = DIM_P.id_prod AND P.id_sub = DIM_P.id_subc AND P.id_marca = DIM_P.id_marca
+INNER JOIN INVENTARIO_G20827907.CATEGORIA C
+ON C.id_cat = DIM_P.id_cat
+INNER JOIN INVENTARIO_G20827907.ABASTECE A
+ON P.id_prod = A.id_prod 
+INNER JOIN INVENTARIO_DW_G20827907.DIM_ALMACEN DIM_A
+ON A.id_alm = DIM_A.id_almacen
+INNER JOIN INVENTARIO_DW_G20827907.DIM_TIEMPO DIM_T
+ON A.fecha_rec = DIM_T.
+
+
+-- FACT TABLE ALMACEN
 
 
 -- ¡Pilas aqui!------------------------------------------------------
