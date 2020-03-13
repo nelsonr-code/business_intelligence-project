@@ -46,52 +46,52 @@ INSERT INTO INVENTARIO_G20827907.MARCA(id_marca, nomb_marca)
 
 -- Insert table ESTADO
 
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Amazonas', 'AMZ');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Amazonas', 'AMZ');
 INSERT INTO ESTADO(nomb_est, siglas)
     VALUES('Anzoategui', 'ANZ');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Apure', 'APR');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Apure', 'APR');
 INSERT INTO ESTADO(nomb_est, siglas)
     VALUES('Aragua', 'ARG');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Barinas', 'BRN');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Bolivar', 'BLV');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Carabobo', 'CRB');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Cojedes', 'COJ');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Delta Amacuro', 'DTA');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Barinas', 'BRN');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Bolivar', 'BLV');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Carabobo', 'CRB');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Cojedes', 'COJ');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Delta Amacuro', 'DTA');
 INSERT INTO ESTADO(nomb_est, siglas)
     VALUES('Distrito Capital', 'DTC');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Falcon', 'FCN');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Guarico', 'GRC');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Lara', 'LAR');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Falcon', 'FCN');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Guarico', 'GRC');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Lara', 'LAR');
 INSERT INTO ESTADO(nomb_est, siglas)
     VALUES('Merida', 'MER');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Miranda', 'MIR');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Monagas', 'MON');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Nueva Esparta', 'NVE');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Portuguesa', 'POR');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Sucre', 'SCR');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Tachira', 'TAC');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Trujillo', 'TRJ');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Vargas', 'VRG');
-INSERT INTO ESTADO(nomb_est, siglas)
-    VALUES('Yaracuy', 'YRC');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Miranda', 'MIR');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Monagas', 'MON');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Nueva Esparta', 'NVE');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Portuguesa', 'POR');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Sucre', 'SCR');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Tachira', 'TAC');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Trujillo', 'TRJ');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Vargas', 'VRG');
+-- INSERT INTO ESTADO(nomb_est, siglas)
+--     VALUES('Yaracuy', 'YRC');
 INSERT INTO ESTADO(nomb_est, siglas)
     VALUES('Zulia', 'ZLA');
 
@@ -100,52 +100,52 @@ INSERT INTO ESTADO(nomb_est, siglas)
 
 INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
     VALUES('Barcelona', 'BRC', 2);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Barinas', 'BRN', 5);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Barquisimeto', 'BRQ', 13);
 INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Barinas', 'BRN', 5);
+    VALUES('Caracas', 'CRC', 3);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Cojedes', 'COJ', 8);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Coro', 'COR', 11);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Ciudad Bolivar', 'CDB', 6);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Cumana', 'CMN', 19);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Guanare', 'GNR', 18);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('La Asuncion', 'LAS', 17);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('La Guaira', 'LGR', 22);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Los Teques', 'LTQ', 15);
 INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Barquisimeto', 'BRQ', 13);
+    VALUES('Maracay', 'MCY', 2);
 INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Caracas', 'CRC', 10);
+    VALUES('Maracaibo', 'MCB', 5);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Maturin', 'MTN', 16);
 INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Cojedes', 'COJ', 8);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Coro', 'COR', 11);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Ciudad Bolivar', 'CDB', 6);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Cumana', 'CMN', 19);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Guanare', 'GNR', 18);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('La Asuncion', 'LAS', 17);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('La Guaira', 'LGR', 22);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Los Teques', 'LTQ', 15);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Maracay', 'MCY', 4);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Maracaibo', 'MCB', 24);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Maturin', 'MTN', 16);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Merida', 'MER', 14);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Puerto Ayacucho', 'PTA', 1);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('San Cristobal', 'SCT', 20);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('San Felipe', 'SFP', 23);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('San Fernando de Apur', 'SFA', 3);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('San Juan de Los Morr', 'SJM', 12);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Trujillo', 'TRJ', 21);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Tucupita', 'TCP', 9);
-INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Valencia', 'VAL', 7);
+    VALUES('Merida', 'MER', 4);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Puerto Ayacucho', 'PTA', 1);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('San Cristobal', 'SCT', 20);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('San Felipe', 'SFP', 23);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('San Fernando de Apur', 'SFA', 3);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('San Juan de Los Morr', 'SJM', 12);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Trujillo', 'TRJ', 21);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Tucupita', 'TCP', 9);
+-- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
+--     VALUES('Valencia', 'VAL', 7);
 
 
 -- Insert table SUBCATEGORIA
@@ -164,21 +164,6 @@ INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
     VALUES(60, 'SUBC Mountain Bikes', 6);
 INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
     VALUES(70, 'SUBC Road Bikes', 7);
-
-INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(10, 'SUBCATEGORIA 1', 1);
-INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(20, 'SUBCATEGORIA 2', 2);
-INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(30, 'SUBCATEGORIA 3', 3);
-INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(40, 'SUBCATEGORIA 4', 4);
-INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(50, 'SUBCATEGORIA 5', 5);
-INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(60, 'SUBCATEGORIA 6', 6);
-INSERT INTO INVENTARIO_G20827907.SUBCATEGORIA(id_sub, nomb_subc, id_cat)
-    VALUES(70, 'SUBCATEGORIA 7', 7);
 
 
 -- Insert table PRODUCTO
@@ -292,8 +277,11 @@ INSERT INTO INVENTARIO_G20827907.TIENDA(nomb_tiend, rif, telf, fax, capacidad_pr
 INSERT INTO INVENTARIO_G20827907.TIENDA(nomb_tiend, rif, telf, fax, capacidad_prod, id_ciud)
     VALUES('Baldwin Bikes', 'J41253680', '(516) 379-8888', '(023) 379-8888', 15000, 3);
 INSERT INTO INVENTARIO_G20827907.TIENDA(nomb_tiend, rif, telf, fax, capacidad_prod, id_ciud)
-    VALUES('Rowlett Bikes', 'J30776801', '(972) 530-5555', '(024) 530-5555', 24);
-
+    VALUES('Rowlett Bikes', 'J30776801', '(972) 530-5555', '(024) 530-5555', 6000, 2);
+INSERT INTO INVENTARIO_G20827907.TIENDA(nomb_tiend, rif, telf, fax, capacidad_prod, id_ciud)
+    VALUES('Start Sport', 'J9572525', '(621) 432-8830', '(021) 432-8830', 4000, 1);
+INSERT INTO INVENTARIO_G20827907.TIENDA(nomb_tiend, rif, telf, fax, capacidad_prod, id_ciud)
+    VALUES('Tamanaco Sport', 'J40112923', '(958) 305-1298', '(025) 305-1298', 30000, 5);
 
 -- Insert table ALMACEN
 
@@ -304,17 +292,17 @@ INSERT INTO INVENTARIO_G20827907.ALMACEN(nomb_alm, rif, telf, dimensiones, capac
 INSERT INTO INVENTARIO_G20827907.ALMACEN(nomb_alm, rif, telf, dimensiones, capacidad_prod, id_ciud)
     VALUES('ALM Rowlett Bikes', 'J30716727', '(507) 186-2004', '50mts2', 12000, 3);
 INSERT INTO INVENTARIO_G20827907.ALMACEN(nomb_alm, rif, telf, dimensiones, capacidad_prod, id_ciud)
-    VALUES('ALM Santa Baldwin Bikes', 'J40423168', NULL, '', 0, 24);
+    VALUES('ALM Santa Baldwin Bikes', 'J40423168', NULL, '', 20000, 2);
 INSERT INTO INVENTARIO_G20827907.ALMACEN(nomb_alm, rif, telf, dimensiones, capacidad_prod, id_ciud)
     VALUES('ALM Santa Rowlett Bikes', 'J29644397', '', '28mts2', 2550, 4);
 INSERT INTO INVENTARIO_G20827907.ALMACEN(nomb_alm, rif, telf, dimensiones, capacidad_prod, id_ciud)
-    VALUES('ALM Cruz Baldwin Bikes', 'J40832284', NULL, '35mts2', 3000, 24);
+    VALUES('ALM Cruz Baldwin Bikes', 'J40832284', NULL, '35mts2', 3000, 1);
 INSERT INTO INVENTARIO_G20827907.ALMACEN(nomb_alm, rif, telf, dimensiones, capacidad_prod, id_ciud)
     VALUES('ALM Cruz Rowlett Bikes', 'J40460391', '', '', 6900, 3);
 INSERT INTO INVENTARIO_G20827907.ALMACEN(nomb_alm, rif, telf, dimensiones, capacidad_prod, id_ciud)
-    VALUES('ALM Baldwin Rowlett Bikes', 'J19306404', '(408) 807-6157', '50mts2', 10000, 24);
+    VALUES('ALM Baldwin Rowlett Bikes', 'J19306404', '(408) 807-6157', '50mts2', 10000, 5);
 INSERT INTO INVENTARIO_G20827907.ALMACEN(nomb_alm, rif, telf, dimensiones, capacidad_prod, id_ciud)
-    VALUES('ALM CORPORACION DEPORTIVA HORIZONTE', 'J40439183', '(631) 807-2088', '60mts2', 150000, 4);
+    VALUES('ALM CORPORACION DEPORTIVA HORIZONTE', 'J40439183', '(631) 807-2088', '60mts2', 15000, 5);
 
 
 -- Insert table PROVEEDOR
@@ -330,70 +318,71 @@ INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
     VALUES('Charolette Rice', 'J31412867', '(916) 381-6003', 5);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Lyndsey Bean', 'J31501632', NULL, 6);
+    VALUES('Lyndsey Bean', 'J31501632', NULL, 5);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Latasha Hays', 'J29450221', '(716) 986-3359', 7);
+    VALUES('Latasha Hays', 'J29450221', '(716) 986-3359', 4);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Jacquline Duncan', 'J29677169', NULL, 8);
+    VALUES('Jacquline Duncan', 'J29677169', NULL, 3);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Genoveva Baldwin', 'J31183476', NULL, 9);
+    VALUES('Genoveva Baldwin', 'J31183476', NULL, 2);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Pamelia Newman', 'J31299455', NULL, 10);
+    VALUES('Pamelia Newman', 'J31299455', NULL, 1);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Deshawn Mendoza', 'J30558369', NULL, 11);
+    VALUES('Deshawn Mendoza', 'J30558369', NULL, 2);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Robby Sykes', 'J31217572', '(516) 583-7761', 12);
+    VALUES('Robby Sykes', 'J31217572', '(516) 583-7761', 3);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Lashawn Ortiz', 'J40003164', NULL, 13);
+    VALUES('Lashawn Ortiz', 'J40003164', NULL, 4);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Garry Espinoza', 'J31335461', NULL, 14);
+    VALUES('Garry Espinoza', 'J31335461', NULL, 5);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Linnie Branch', 'J31385362', NULL, 15);
+    VALUES('Linnie Branch', 'J31385362', NULL, 4);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Emmitt Sanchez', 'J40003939', '(212) 945-8823', 16);
+    VALUES('Emmitt Sanchez', 'J40003939', '(212) 945-8823', 3);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Caren Stephens', 'J30623405', NULL, 17);
+    VALUES('Caren Stephens', 'J30623405', NULL, 2);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Georgetta Hardin', 'J30781902', NULL, 18);
+    VALUES('Georgetta Hardin', 'J30781902', NULL, 1);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Lizzette Stein', 'J08004541', NULL, 19);
+    VALUES('Lizzette Stein', 'J08004541', NULL, 2);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Aleta Shepard', 'J08034485', NULL, 20);
+    VALUES('Aleta Shepard', 'J08034485', NULL, 3);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Tobie Little', 'J29863218', NULL, 21);
+    VALUES('Tobie Little', 'J29863218', NULL, 4);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Adelle Larsen', 'J40262030', NULL, 22);
+    VALUES('Adelle Larsen', 'J40262030', NULL, 5);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Kaylee English', 'J29360505', NULL, 23);
+    VALUES('Kaylee English', 'J29360505', NULL, 4);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Corene Wall', 'J29441324', NULL, 24);
+    VALUES('Corene Wall', 'J29441324', NULL, 3);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Regenia Vaughan', 'J40108437', NULL, 4);
+    VALUES('Regenia Vaughan', 'J40108437', NULL, 2);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Theo Reese', 'J29462780', '(562) 215-2907', 5);
+    VALUES('Theo Reese', 'J29462780', '(562) 215-2907', 1);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Santos Valencia', 'J40675786', NULL, 6);
+    VALUES('Santos Valencia', 'J40675786', NULL, 4);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Jeanice Frost', 'J30756827', NULL, 16);
+    VALUES('Jeanice Frost', 'J30756827', NULL, 2);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
-    VALUES('Syreeta Hendricks', 'J40162348', NULL, 3);
+    VALUES('Syreeta Hendricks', 'J40162348', NULL, 2);
+
 -- OJO
-INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
-    VALUES('Jamaal','Albert',NULL,'jamaal.albert@gmail.com','853 Stonybrook Street ','Torrance','CA',90505);
-INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
-    VALUES('Williemae','Holloway','(510) 246-8375','williemae.holloway@msn.com','69 Cypress St. ','Oakland','CA',94603);
-INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
-    VALUES('Araceli','Golden',NULL,'araceli.golden@msn.com','12 Ridgeview Ave. ','Fullerton','CA',92831);
-INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
-    VALUES('Deloris','Burke',NULL,'deloris.burke@hotmail.com','895 Edgemont Drive ','Palos Verdes Peninsula','CA',90274);
-INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
-    VALUES('Brittney','Woodward',NULL,'brittney.woodward@aol.com','960 River St. ','East Northport','NY',11731);
-INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
-    VALUES('Guillermina','Noble',NULL,'guillermina.noble@msn.com','6 Del Monte Lane ','Baldwinsville','NY',13027);
-INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
-    VALUES('Bernita','Mcdaniel',NULL,'bernita.mcdaniel@hotmail.com','2 Peg Shop Ave. ','Liverpool','NY',13090);
-INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
-    VALUES('Melia','Brady',NULL,'melia.brady@gmail.com','907 Shirley Rd. ','Maspeth','NY',11378);
+-- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
+--     VALUES('Jamaal','Albert',NULL,'jamaal.albert@gmail.com','853 Stonybrook Street ','Torrance','CA',90505);
+-- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
+--     VALUES('Williemae','Holloway','(510) 246-8375','williemae.holloway@msn.com','69 Cypress St. ','Oakland','CA',94603);
+-- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
+--     VALUES('Araceli','Golden',NULL,'araceli.golden@msn.com','12 Ridgeview Ave. ','Fullerton','CA',92831);
+-- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
+--     VALUES('Deloris','Burke',NULL,'deloris.burke@hotmail.com','895 Edgemont Drive ','Palos Verdes Peninsula','CA',90274);
+-- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
+--     VALUES('Brittney','Woodward',NULL,'brittney.woodward@aol.com','960 River St. ','East Northport','NY',11731);
+-- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
+--     VALUES('Guillermina','Noble',NULL,'guillermina.noble@msn.com','6 Del Monte Lane ','Baldwinsville','NY',13027);
+-- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
+--     VALUES('Bernita','Mcdaniel',NULL,'bernita.mcdaniel@hotmail.com','2 Peg Shop Ave. ','Liverpool','NY',13090);
+-- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
+--     VALUES('Melia','Brady',NULL,'melia.brady@gmail.com','907 Shirley Rd. ','Maspeth','NY',11378);
 
 
 -- TABLAS RELACION ------------------------------------------------------------
@@ -501,112 +490,154 @@ INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant
     VALUES('20160329', 49, 1, 8, 85, 84, 83);
 INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
     VALUES('20160329', 50, 1, 29, 82, 81, 80);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100120', 1, 2, 14, 34, 50, 10);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100121', 2, 2, 16, 20, 23, 20);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100122', 3, 2, 28, 24, 29, 10);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100123', 4, 2, 2, 50, 56, 100);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100124', 5, 2, 1, 99, 27, 23);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100129', 6, 2, 11, 35, 30, 50);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100130', 7, 2, 8, 87, 30, 40);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100131', 8, 2, 1, 90, 100, 50);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100201', 9, 2, 17, 23, 34, 25);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100202', 10, 2, 13, 10, 35, 99);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100203', 11, 2, 21, 27, 12, 20);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100204', 1, 3, 14, 6, 15, 25);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100205', 2, 3, 24, 20, 20, 20);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100206', 3, 3, 0, 100, 100, 100);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100207', 4, 3, 11, 45, 59, 69);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100208', 5, 3, 3, 19, 56, 35);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100209', 6, 3, 27, 27, 60, 51);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100210', 7, 3, 12, 46, 12, 14);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100211', 8, 3, 12, 2, 15, 15);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100213', 9, 3, 23, 4, 20, 40);
+INSERT INTO INVENTARIO_G20827907.TIENE(fecha, id_prod, id_tiend, cant_vend, cant_exist, nopa, nmrp)
+    VALUES('20100215', 10, 3, 21, 10, 35, 50);
 
 
 -- Insert table ALMACENA
 
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160330', 1, 51, 2, 123, 234, 56);
+    VALUES('20160330', 1, 41, 2, 123, 234, 56);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160331', 1, 52, 18, 23, 45, 87);
+    VALUES('20160331', 1, 42, 18, 23, 45, 87);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160402', 1, 53, 17, 34, 43, 35);
+    VALUES('20160402', 1, 43, 17, 34, 43, 35);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160403', 1, 54, 11, 10, 54, 98);
+    VALUES('20160403', 1, 44, 11, 10, 54, 98);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160403', 1, 55, 11, 23, 6, 6);
+    VALUES('20160403', 1, 45, 11, 23, 6, 6);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160404', 1, 56, 15, 23, 87, 9);
+    VALUES('20160404', 1, 46, 15, 23, 87, 9);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160404', 1, 57, 1, 43, 8, 2);
+    VALUES('20160404', 1, 47, 1, 43, 8, 2);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160404', 1, 58, 1, 1, 56, 100);
+    VALUES('20160404', 1, 48, 1, 1, 56, 100);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160404', 1, 59, 22, 34, 54, 89);
+    VALUES('20160404', 1, 49, 22, 34, 54, 89);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160406', 1, 60, 19, 54, 43, 98);
+    VALUES('20160406', 1, 40, 19, 54, 43, 98);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160406', 1, 61, 30, 59, 37, 32);
+    VALUES('20160406', 1, 41, 30, 59, 37, 32);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160407', 1, 62, 21, 12, 100, 76);
+    VALUES('20160407', 1, 42, 21, 12, 100, 76);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160408', 1, 63, 4, 34, 34, 89);
+    VALUES('20160408', 1, 43, 4, 34, 34, 89);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160408', 1, 64, 30, 12, 15, 234);
+    VALUES('20160408', 1, 44, 30, 12, 15, 234);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160408', 1, 65, 10, 32, 34, 21);
+    VALUES('20160408', 1, 45, 10, 32, 34, 21);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160409', 1, 66, 12, 2, 30, 12);
+    VALUES('20160409', 1, 46, 12, 2, 30, 12);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160410', 1, 67, 19, 98, 199, 200);
+    VALUES('20160410', 1, 47, 19, 98, 199, 200);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160410', 1, 68, 30, 21, 56, 65);
+    VALUES('20160410', 1, 48, 30, 21, 56, 65);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160411', 1, 69, 4, 12, 45, 16);
+    VALUES('20160411', 1, 49, 4, 12, 45, 16);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160411', 1, 70, 3, 2, 3, 2);
+    VALUES('20160411', 1, 40, 3, 2, 3, 2);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160411', 1, 71, 25, 10, 20, 30);
+    VALUES('20160411', 1, 31, 25, 10, 20, 30);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160412', 1, 72, 9, 34, 43, 40);
+    VALUES('20160412', 1, 32, 9, 34, 43, 40);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160413', 1, 73, 7, 40, 67, 98);
+    VALUES('20160413', 1, 33, 7, 40, 67, 98);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160415', 1, 74, 9, 34, 98, 65);
+    VALUES('20160415', 1, 34, 9, 34, 98, 65);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160416', 1, 75, 23, 65, 12, 3);
+    VALUES('20160416', 1, 35, 23, 65, 12, 3);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160416', 1, 76, 15, 15, 30, 45);
+    VALUES('20160416', 1, 36, 15, 15, 30, 45);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160417', 1, 77, 16, 98, 65, 4);
+    VALUES('20160417', 1, 37, 16, 98, 65, 4);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160417', 1, 78, 13, 100, 45, 5);
+    VALUES('20160417', 1, 38, 13, 100, 45, 5);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160418', 1, 79, 13, 34, 65, 9);
+    VALUES('20160418', 1, 39, 13, 34, 65, 9);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160418', 1, 80, 11, 76, 12, 3);
+    VALUES('20160418', 1, 30, 11, 76, 12, 3);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160419', 1, 81, 25, 53, 26, 7);
+    VALUES('20160419', 1, 21, 25, 53, 26, 7);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160419', 1, 82, 1, 78, 50, 2);
+    VALUES('20160419', 1, 22, 1, 78, 50, 2);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160420', 1, 83, 13, 2, 45, 6);
+    VALUES('20160420', 1, 23, 13, 2, 45, 6);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160421', 1, 84, 11, 45, 21, 10);
+    VALUES('20160421', 1, 24, 11, 45, 21, 10);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160422', 1, 85, 23, 98, 23, 20);
+    VALUES('20160422', 1, 25, 23, 98, 23, 20);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160422', 1, 86, 19, 78, 27, 27);
+    VALUES('20160422', 1, 26, 19, 78, 27, 27);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160423', 1, 87, 27, 18, 13, 8);
+    VALUES('20160423', 1, 27, 27, 18, 13, 8);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160423', 1, 88, 7, 13, 8, 19);
+    VALUES('20160423', 1, 28, 7, 13, 8, 19);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160427', 1, 89, 9, 38, 89, 83);
+    VALUES('20160427', 1, 29, 9, 38, 89, 83);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160427', 1, 90, 4, 54, 20, 10);
+    VALUES('20160427', 1, 20, 4, 54, 20, 10);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160428', 1, 91, 8, 20, 20, 20);
+    VALUES('20160428', 1, 1, 8, 20, 20, 20);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160428', 1, 92, 0, 30, 45, 60);
+    VALUES('20160428', 1, 2, 0, 30, 45, 60);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160428', 1, 93, 22, 12, 10, 22);
+    VALUES('20160428', 1, 3, 22, 12, 10, 22);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160428', 1, 94, 6, 6, 15, 21);
+    VALUES('20160428', 1, 4, 6, 6, 15, 21);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160430', 1, 95, 25, 3, 20, 23);
+    VALUES('20160430', 1, 5, 25, 3, 20, 23);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160501', 1, 96, 20, 5, 45, 50);
+    VALUES('20160501', 1, 6, 20, 5, 45, 50);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160501', 1, 97, 20, 10, 30, 10);
+    VALUES('20160501', 1, 7, 20, 10, 30, 10);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160501', 1, 98, 28, 57, 67, 245);
+    VALUES('20160501', 1, 8, 28, 57, 67, 245);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160501', 1, 99, 28, 23, 31, 32);
-INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160503', 1, 100, 15, 32, 31, 23);
-INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20160503', 1, 101, 17, 31, 23, 32);
+    VALUES('20160501', 1, 9, 28, 23, 31, 32);
+-- INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
+--     VALUES('20160503', 1, 10, 15, 32, 31, 23);
+-- INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
+--     VALUES('20160503', 1, 10, 17, 31, 23, 32);
 
 
 -- Insert table PROVEE
@@ -624,7 +655,7 @@ INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, i
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20160104', '20160105', 24, 2, 44, 20, 539.99, 10781.98, 5822161.38);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20160104', '20160105', 24, 2, 44, 10, 539.99, 5390.99, 2911080.69);
+    VALUES('20160106', '20160117', 24, 2, 44, 10, 539.99, 5390.99, 2911080.69);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20160104', '20160105', 20, 2, 48, 23, 1499.99, 34499.7, 51749205);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
@@ -664,9 +695,9 @@ INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, i
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20160118', '20160119', 12, 2, 7, 6, 3999.99, 23999.94, 95999520);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20160119','20160120', 7, 2, 11, 3, 1680.99, 5069.97, 8522569.87);
+    VALUES('20160219','20160228', 7, 2, 11, 3, 1680.99, 5069.97, 8522569.87);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20160119','20160121', 22, 2, 8, 10, 1799.99, 17999,9, 32399640);
+    VALUES('20160119','20160121', 22, 2, 8, 10, 1799.99, 17999.9, 32399640);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20160120','20160121', 4, 2, 14, 2, 269.99, 539.98, 145789.20);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
@@ -746,10 +777,10 @@ INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tien
     VALUES('20160207', '20160208', 8, 2, 7);
 INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
     VALUES('20160208', '20160209', 9, 2, 1);
-INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
-    VALUES('20160209', '20160212', 9, 2, 5);
-INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
-    VALUES('20160209', '20160211', 4, 3, 9);
+-- INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
+--     VALUES('20160209', '20160212', 9, 2, 5);
+-- INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
+--     VALUES('20160209', '20160211', 4, 3, 9);
 INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
     VALUES('20160210', '20160211', 5, 2, 9);
 INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
@@ -814,5 +845,3 @@ INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tien
     VALUES('20160228', '20160229', 1, 2, 35);
 INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
     VALUES('20160229', '20160301', 1, 3, 34);
-INSERT INTO INVENTARIO_G20827907.ABASTECE(fecha_rec, fecha_desc, id_alm, id_tiend, id_prod)
-    VALUES('20160301', '20160304', 1, 2, 33);
