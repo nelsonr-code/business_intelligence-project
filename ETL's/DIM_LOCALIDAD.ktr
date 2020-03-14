@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2020/02/22 14:43:00.322</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2020/02/28 21:08:27.315</modified_date>
+    <modified_date>2020/02/29 13:11:37.176</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -549,7 +549,7 @@
     </partitioning>
     <connection>MySQL transaccional</connection>
     <rowlimit>0</rowlimit>
-    <sql>SELECT CONCAT(E.id_est, C.id_ciud) AS cod_concat
+    <sql>SELECT CONCAT(E.id_est, C.id_ciud) AS codigo_concatenado
 , E.id_est AS id_estado
 , nomb_est AS desc_estado
 , C.id_ciud AS id_ciudad
@@ -593,23 +593,16 @@ ON E.id_est = C.id_est</sql>
       <schema/>
       <table>dim_localidad</table>
       <key>
-        <name>sk_dim_local</name>
-        <field>sk_dim_local</field>
+        <name>codigo_concatenado</name>
+        <field>codigo_concatenado</field>
         <condition>=</condition>
         <name2/>
       </key>
-      <key>
-        <name>id_estado</name>
-        <field>id_estado</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>id_ciudad</name>
-        <field>id_ciudad</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
+      <value>
+        <name>codigo_concatenado</name>
+        <rename>codigo_concatenado</rename>
+        <update>N</update>
+      </value>
       <value>
         <name>id_estado</name>
         <rename>id_estado</rename>
@@ -745,7 +738,7 @@ var sk_dim_local = max_sk + sk_autoincrement</jsScript_script>
         <name>max_sk</name>
       </field>
       <field>
-        <name>cod_concat</name>
+        <name>codigo_concatenado</name>
       </field>
       <field>
         <name>id_estado</name>
@@ -767,14 +760,28 @@ var sk_dim_local = max_sk + sk_autoincrement</jsScript_script>
       </field>
       <select_unspecified>N</select_unspecified>
       <remove>
-        <name>cod_concat</name>
-      </remove>
-      <remove>
         <name>max_sk</name>
       </remove>
       <remove>
         <name>sk_autoincrement</name>
       </remove>
+      <meta>
+        <name>codigo_concatenado</name>
+        <rename>codigo_concatenado</rename>
+        <type>Integer</type>
+        <length>9</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>

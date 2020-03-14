@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
     <name>DIM_PRODUCTO</name>
@@ -430,14 +429,516 @@
     <created_user>-</created_user>
     <created_date>2020/02/23 20:08:14.357</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2020/02/23 20:08:14.357</modified_date>
-    <key_for_session_key/>
+    <modified_date>2020/03/09 22:15:21.757</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>MySQL dimensional</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>INVENTARIO_DW_G20827907</database>
+    <port>3306</port>
+    <username>BI</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb1ba7228cc2fe83</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>MySQL transaccional</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>INVENTARIO_G20827907</database>
+    <port>3306</port>
+    <username>BI</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb1ba7228cc2fe83</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
+    <hop>
+      <from>MAX SK</from>
+      <to>CATEGORIA, SUBCATEGORIA, MARCA, PRODUCTO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CATEGORIA, SUBCATEGORIA, MARCA, PRODUCTO</from>
+      <to>sk_autoincrement</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sk_autoincrement</from>
+      <to>Modified JavaScript value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Insert / update DIM_PRODUCTO</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <step>
+    <name>CATEGORIA, SUBCATEGORIA, MARCA, PRODUCTO</name>
+    <type>DBJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL transaccional</connection>
+    <rowlimit>0</rowlimit>
+    <sql>SELECT CAST(CONCAT(C.id_cat, S.id_sub, M.id_marca, P.id_prod) AS UNSIGNED) AS codigo_concatenado
+,   C.id_cat
+,   C.nomb_cat AS desc_cat
+,   S.id_sub AS id_subc
+,   S.nomb_subc AS desc_subc
+,   M.id_marca
+,   M.nomb_marca
+,   P.id_prod
+,   P.nomb_prod AS desc_prod
+,   P.pvp
+FROM INVENTARIO_G20827907.SUBCATEGORIA S
+INNER JOIN INVENTARIO_G20827907.CATEGORIA C
+ON C.id_cat = S.id_cat
+INNER JOIN INVENTARIO_G20827907.PRODUCTO P 
+ON S.id_sub = P.id_sub
+INNER JOIN INVENTARIO_G20827907.MARCA M
+ON P.id_marca = M.id_marca
+
+UNION
+
+SELECT CAST(CONCAT(C.id_cat, S.id_sub, M.id_marca) AS UNSIGNED) AS codigo_concatenado
+,   C.id_cat
+,   C.nomb_cat AS desc_cat
+,   S.id_sub AS id_subc
+,   S.nomb_subc AS desc_subc
+,   M.id_marca
+,   M.nomb_marca
+,   NULL AS id_prod
+,   NULL AS desc_prod
+,   NULL AS pvp
+FROM INVENTARIO_G20827907.MARCA M, INVENTARIO_G20827907.SUBCATEGORIA S
+INNER JOIN INVENTARIO_G20827907.CATEGORIA C
+ON C.id_cat = S.id_cat
+
+UNION
+
+SELECT CAST(CONCAT(C.id_cat, S.id_sub) AS UNSIGNED) AS codigo_concatenado
+,   C.id_cat
+,   C.nomb_cat AS desc_cat
+,   S.id_sub AS id_subc
+,   S.nomb_subc AS desc_subc
+,   NULL AS id_marca
+,   NULL AS nomb_marca
+,   NULL AS id_prod
+,   NULL AS desc_prod
+,   NULL AS pvp
+FROM INVENTARIO_G20827907.SUBCATEGORIA S
+INNER JOIN INVENTARIO_G20827907.CATEGORIA C
+ON C.id_cat = S.id_cat
+
+UNION
+
+SELECT CAST(CONCAT(id_cat) AS UNSIGNED) AS codigo_concatenado
+,   id_cat
+,   nomb_cat AS desc_cat
+,   NULL AS id_subc
+,   NULL AS desc_subc
+,   NULL AS id_marca
+,   NULL AS nomb_marca
+,   NULL AS id_prod
+,   NULL AS desc_prod
+,   NULL AS pvp
+FROM INVENTARIO_G20827907.CATEGORIA</sql>
+    <outer_join>N</outer_join>
+    <replace_vars>N</replace_vars>
+    <parameter>
+    </parameter>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>MAX SK</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL dimensional</connection>
+    <sql>SELECT MAX(sk_dim_prod) AS max_sk
+FROM INVENTARIO_DW_G20827907.DIM_PRODUCTO</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>16</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sk_autoincrement</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <valuename>sk_autoincrement</valuename>
+    <use_database>N</use_database>
+    <connection/>
+    <schema/>
+    <seqname>SEQ_</seqname>
+    <use_counter>Y</use_counter>
+    <counter_name/>
+    <start_at>1</start_at>
+    <increment_by>1</increment_by>
+    <max_value>999999999</max_value>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Modified JavaScript value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+var sk_dim_prod = max_sk + sk_autoincrement</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>sk_dim_prod</name>
+        <rename>sk_dim_prod</rename>
+        <type>Number</type>
+        <length>9</length>
+        <precision>0</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Insert / update DIM_PRODUCTO</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL dimensional</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>INVENTARIO_DW_G20827907</schema>
+      <table>DIM_PRODUCTO</table>
+      <key>
+        <name>id_cat</name>
+        <field>id_cat</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>id_subc</name>
+        <field>id_subc</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>id_marca</name>
+        <field>id_marca</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>id_prod</name>
+        <field>id_prod</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id_cat</name>
+        <rename>id_cat</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>desc_cat</name>
+        <rename>desc_cat</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>id_subc</name>
+        <rename>id_subc</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>desc_subc</name>
+        <rename>desc_subc</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>id_marca</name>
+        <rename>id_marca</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>nomb_marca</name>
+        <rename>nomb_marca</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>id_prod</name>
+        <rename>id_prod</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>desc_prod</name>
+        <rename>desc_prod</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pvp</name>
+        <rename>pvp</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>sk_dim_prod</name>
+        <rename>sk_dim_prod</rename>
+        <update>N</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>904</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>max_sk</name>
+        <rename/>
+      </field>
+      <field>
+        <name>codigo_concatenado</name>
+        <rename/>
+      </field>
+      <field>
+        <name>id_cat</name>
+        <rename/>
+      </field>
+      <field>
+        <name>desc_cat</name>
+        <rename/>
+      </field>
+      <field>
+        <name>id_subc</name>
+        <rename/>
+      </field>
+      <field>
+        <name>desc_subc</name>
+        <rename/>
+      </field>
+      <field>
+        <name>id_marca</name>
+        <rename/>
+      </field>
+      <field>
+        <name>nomb_marca</name>
+        <rename/>
+      </field>
+      <field>
+        <name>id_prod</name>
+        <rename/>
+      </field>
+      <field>
+        <name>desc_prod</name>
+        <rename/>
+      </field>
+      <field>
+        <name>pvp</name>
+        <rename/>
+      </field>
+      <field>
+        <name>sk_autoincrement</name>
+        <rename/>
+      </field>
+      <field>
+        <name>sk_dim_prod</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <remove>
+        <name>codigo_concatenado</name>
+      </remove>
+      <remove>
+        <name>max_sk</name>
+      </remove>
+      <remove>
+        <name>sk_autoincrement</name>
+      </remove>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>728</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

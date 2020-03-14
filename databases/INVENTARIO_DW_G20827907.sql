@@ -1,6 +1,6 @@
 /*
 Created: 16/2/2020
-Modified: 17/2/2020
+Modified: 28/2/2020
 Database: MySQL 8.0
 */
 
@@ -11,7 +11,7 @@ Database: MySQL 8.0
 -- Create tables section -------------------------------------------------
 
 -- dimension producto
-
+/*Parece que hay que crear un codigo_concatenado para actualizar o insertar correctamente*/
 CREATE TABLE INVENTARIO_DW_G20827907.DIM_PRODUCTO
 (
     -- id_dim_prod INT NOT NULL,
@@ -19,11 +19,11 @@ CREATE TABLE INVENTARIO_DW_G20827907.DIM_PRODUCTO
     id_cat INT,
     desc_cat VARCHAR(20),
     id_subc INT,
-    desc_subc VARCHAR(20),
+    desc_subc VARCHAR(40),
     id_marca INT,
     nomb_marca VARCHAR(20),
     id_prod INT,
-    desc_prod VARCHAR(30),
+    desc_prod VARCHAR(50),
     pvp FLOAT,
     CONSTRAINT dim_producto_pkey PRIMARY KEY(sk_dim_prod)
 )
@@ -39,6 +39,7 @@ CREATE TABLE INVENTARIO_DW_G20827907.DIM_LOCALIDAD
     desc_estado VARCHAR(20),
     id_ciudad INT,
     desc_ciudad VARCHAR(20),
+    codigo_concatenado INTEGER,
     CONSTRAINT dim_localidad_pkey PRIMARY KEY(sk_dim_local)
 )
 ;
@@ -91,17 +92,17 @@ CREATE TABLE INVENTARIO_DW_G20827907.DIM_PROVEEDOR
 
 
 -- dimension tiempo
-
+/* FALTA desc_anio, id_semestre, desc_semestre, id_trimestre, desc_dia. El atributo id_dia es el dia del anio */
 CREATE TABLE INVENTARIO_DW_G20827907.DIM_TIEMPO
 (
     sk_dim_tiempo INT NOT NULL,
-    id_anio INT,
+    id_anio INT, 
     desc_anio VARCHAR(20),
     id_semestre INT,
     desc_semestre VARCHAR(20),
     id_trimestre INT,
     desc_trimestre VARCHAR(20),
-    id_mes INT,
+    id_mes INT, 
     desc_mes VARCHAR(20),
     id_dia INT,
     desc_dia VARCHAR(20),
