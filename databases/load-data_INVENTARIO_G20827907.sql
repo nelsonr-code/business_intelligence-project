@@ -99,7 +99,7 @@ INSERT INTO ESTADO(nomb_est, siglas)
 -- Insert table CIUDAD
 
 INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
-    VALUES('Barcelona', 'BRC', 2);
+    VALUES('Barcelona', 'BRC', 1);
 -- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
 --     VALUES('Barinas', 'BRN', 5);
 -- INSERT INTO CIUDAD(nomb_ciud, siglas, id_est)
