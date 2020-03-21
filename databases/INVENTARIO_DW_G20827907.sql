@@ -121,7 +121,7 @@ CREATE TABLE INVENTARIO_DW_G20827907.FACT_ALMACEN
     sk_dim_local INT NOT NULL,
     sk_dim_prov INT NOT NULL,
     sk_dim_prod INT NOT NULL,
-    fecha_original INT,
+    fecha_original INT NOT NULL,
     nmrs INT,
     nopal INT,
     fecha_pedido INT,
@@ -132,8 +132,8 @@ CREATE TABLE INVENTARIO_DW_G20827907.FACT_ALMACEN
     costo_productos FLOAT,
     costo_envio FLOAT,
     costo_total FLOAT,
-    inventario_dd INT, -- Cambiado a INT. Su tipo era VARCHAR(30) como en el modelo dado
-    CONSTRAINT fact_almacen_pkey PRIMARY KEY (sk_dim_almacen, sk_dim_local, sk_dim_prov, sk_dim_prod),
+    inventario_dd BIGINT, -- Cambiado a BIGINT. Su tipo era VARCHAR(30) como en el modelo dado
+    CONSTRAINT fact_almacen_pkey PRIMARY KEY (fecha_original, sk_dim_almacen, sk_dim_local, sk_dim_prov, sk_dim_prod),
     -- CONSTRAINT fact_almacen_fecha_original_fkey FOREIGN KEY (fecha_original) REFERENCES INVENTARIO_DW_G20827907.DIM_TIEMPO (sk_dim_tiempo) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT fact_almacen_sk_almacen_fkey FOREIGN KEY (sk_dim_almacen) REFERENCES INVENTARIO_DW_G20827907.DIM_ALMACEN (sk_dim_almacen) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT fact_almacen_sk_local_fkey FOREIGN KEY (sk_dim_local) REFERENCES INVENTARIO_DW_G20827907.DIM_LOCALIDAD (sk_dim_local) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -147,7 +147,7 @@ CREATE TABLE INVENTARIO_DW_G20827907.FACT_ALMACEN
 
 CREATE TABLE INVENTARIO_DW_G20827907.FACT_TIENDA
 (
-    fecha_original INT,
+    fecha_original INT NOT NULL,
     sk_dim_tiend INT NOT NULL,
     sk_dim_local INT NOT NULL,
     sk_dim_almacen INT NOT NULL,
@@ -159,8 +159,8 @@ CREATE TABLE INVENTARIO_DW_G20827907.FACT_TIENDA
     cant_vendida INT,
     nmrp INT,
     nopa INT,
-    inventario_dd INT, -- Cambiado a INT. Su tipo era VARCHAR(30) como en el modelo dado
-    CONSTRAINT fact_tienda_sk_pkey PRIMARY KEY (sk_dim_tiend, sk_dim_local, sk_dim_almacen, sk_dim_prod),
+    inventario_dd BIGINT, -- Cambiado a BIGINT. Su tipo era VARCHAR(30) como en el modelo dado
+    CONSTRAINT fact_tienda_sk_pkey PRIMARY KEY (fecha_original, sk_dim_tiend, sk_dim_local, sk_dim_almacen, sk_dim_prod),
     -- CONSTRAINT fact_tienda_fecha_original_fkey FOREIGN KEY (fecha_original) REFERENCES INVENTARIO_DW_G20827907.DIM_TIEMPO (sk_dim_tiempo) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT fact_tienda_sk_tiend_fkey FOREIGN KEY (sk_dim_tiend) REFERENCES INVENTARIO_DW_G20827907.DIM_TIENDA (sk_dim_tiend) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT fact_tienda_sk_local_fkey FOREIGN KEY (sk_dim_local) REFERENCES INVENTARIO_DW_G20827907.DIM_LOCALIDAD (sk_dim_local) ON DELETE NO ACTION ON UPDATE NO ACTION,
