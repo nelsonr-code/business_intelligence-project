@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2020/02/23 20:10:39.491</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2020/03/15 15:33:36.512</modified_date>
+    <modified_date>2020/03/19 17:27:51.668</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -519,7 +519,8 @@
     </partitioning>
     <connection>MySQL dimensional</connection>
     <rowlimit>0</rowlimit>
-    <sql>SELECT CAST(CONCAT(DIM_TD.sk_dim_tiend, DIM_L.sk_dim_local, DIM_A.sk_dim_almacen, DIM_P.sk_dim_prod) AS UNSIGNED) AS inventario_dd
+    <sql>SELECT CAST(CONCAT(CAST(date_format(T.fecha, '%Y%m%d') AS unsigned), DIM_TD.sk_dim_tiend, DIM_L.sk_dim_local, DIM_A.sk_dim_almacen, DIM_P.sk_dim_prod) AS UNSIGNED) AS inventario_dd
+,   CAST(CONCAT(DIM_TD.sk_dim_tiend, DIM_L.sk_dim_local, DIM_A.sk_dim_almacen, DIM_P.sk_dim_prod) AS UNSIGNED) AS candidate_to_pk
 ,	CAST(date_format(T.fecha, '%Y%m%d') AS unsigned) AS fecha_original
 -- ,   T.fecha AS fecha_original
 -- ,   DIM_T.sk_dim_tiempo
@@ -540,6 +541,8 @@
 ,   T.nopa
 ,   T.nmrp
 FROM INVENTARIO_G20827907.TIENE T
+-- INNER JOIN INVENTARIO_DW_G20827907.DIM_TIEMPO DIM_T
+-- ON T.fecha = DIM_T.fecha
 INNER JOIN INVENTARIO_G20827907.PRODUCTO P
 ON T.id_prod = P.id_prod
 INNER JOIN INVENTARIO_G20827907.TIENDA TD
@@ -580,6 +583,133 @@ ON A.id_alm = DIM_A.id_almacen
     </GUI>
   </step>
   <step>
+    <name>Insert / update FACT_TIENDA</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL dimensional</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>fact_tienda</table>
+      <key>
+        <name>fecha_original</name>
+        <field>fecha_original</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_dim_tiend</name>
+        <field>sk_dim_tiend</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_dim_local</name>
+        <field>sk_dim_local</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_dim_almacen</name>
+        <field>sk_dim_almacen</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_dim_prod</name>
+        <field>sk_dim_prod</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>inventario_dd</name>
+        <rename>inventario_dd</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>fecha_original</name>
+        <rename>fecha_original</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>sk_dim_tiend</name>
+        <rename>sk_dim_tiend</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>sk_dim_local</name>
+        <rename>sk_dim_local</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>sk_dim_almacen</name>
+        <rename>sk_dim_almacen</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>sk_dim_prod</name>
+        <rename>sk_dim_prod</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>fecha_pedido</name>
+        <rename>fecha_pedido</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>fecha_recibido</name>
+        <rename>fecha_recibido</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>pvp_prod</name>
+        <rename>pvp</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cant_vendida</name>
+        <rename>cant_vend</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cant_exist</name>
+        <rename>cant_exist</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nopa</name>
+        <rename>nopa</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nmrp</name>
+        <rename>nmrp</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>MAX SK</name>
     <type>TableInput</type>
     <description/>
@@ -591,8 +721,8 @@ ON A.id_alm = DIM_A.id_almacen
       <schema_name/>
     </partitioning>
     <connection>MySQL dimensional</connection>
-    <sql>SELECT MAX(sk_dim_tiempo) AS max_sk
-FROM INVENTARIO_DW_G20827907.DIM_TIEMPO</sql>
+    <sql>SELECT MAX(inventario_dd) AS max_sk
+FROM INVENTARIO_DW_G20827907.FACT_TIENDA</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -626,59 +756,45 @@ FROM INVENTARIO_DW_G20827907.DIM_TIEMPO</sql>
     <fields>
       <field>
         <name>max_sk</name>
-        <rename/>
       </field>
       <field>
         <name>inventario_dd</name>
-        <rename/>
       </field>
       <field>
         <name>fecha_original</name>
-        <rename/>
       </field>
       <field>
         <name>sk_dim_tiend</name>
-        <rename/>
       </field>
       <field>
         <name>sk_dim_local</name>
-        <rename/>
       </field>
       <field>
         <name>sk_dim_almacen</name>
-        <rename/>
       </field>
       <field>
         <name>sk_dim_prod</name>
-        <rename/>
       </field>
       <field>
         <name>fecha_pedido</name>
-        <rename/>
       </field>
       <field>
         <name>fecha_recibido</name>
-        <rename/>
       </field>
       <field>
         <name>pvp</name>
-        <rename/>
       </field>
       <field>
         <name>cant_vend</name>
-        <rename/>
       </field>
       <field>
         <name>cant_exist</name>
-        <rename/>
       </field>
       <field>
         <name>nopa</name>
-        <rename/>
       </field>
       <field>
         <name>nmrp</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <remove>
@@ -763,109 +879,6 @@ FROM INVENTARIO_DW_G20827907.DIM_TIEMPO</sql>
     </remotesteps>
     <GUI>
       <xloc>424</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Insert / update FACT_TIENDA</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>MySQL dimensional</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>fact_tienda</table>
-      <key>
-        <name>inventario_dd</name>
-        <field>inventario_dd</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>inventario_dd</name>
-        <rename>inventario_dd</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>fecha_original</name>
-        <rename>fecha_original</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>sk_dim_tiend</name>
-        <rename>sk_dim_tiend</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>sk_dim_local</name>
-        <rename>sk_dim_local</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>sk_dim_almacen</name>
-        <rename>sk_dim_almacen</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>sk_dim_prod</name>
-        <rename>sk_dim_prod</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>fecha_pedido</name>
-        <rename>fecha_pedido</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>fecha_recibido</name>
-        <rename>fecha_recibido</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>pvp_prod</name>
-        <rename>pvp</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cant_vendida</name>
-        <rename>cant_vend</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cant_exist</name>
-        <rename>cant_exist</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nopa</name>
-        <rename>nopa</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>nmrp</name>
-        <rename>nmrp</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>624</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
