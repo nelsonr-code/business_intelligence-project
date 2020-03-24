@@ -10,6 +10,8 @@ Database: MySQL 8.0
 
 -- Create tables section -------------------------------------------------
 
+CREATE DATABASE IF NOT EXIST INVENTARIO_G20827907
+
 -- Table CATEGORIA
 
 CREATE TABLE INVENTARIO_G20827907.CATEGORIA

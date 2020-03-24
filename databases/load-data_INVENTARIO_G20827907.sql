@@ -367,10 +367,10 @@ INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
     VALUES('Jeanice Frost', 'J30756827', NULL, 2);
 INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
     VALUES('Syreeta Hendricks', 'J40162348', NULL, 2);
+INSERT INTO INVENTARIO_G20827907.PROVEEDOR(nombre, rif, telf, id_ciud)
+     VALUES('Jamaal Albert', 'J20427744', '(659) 905-0521', 3);
 
 -- OJO
--- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
---     VALUES('Jamaal','Albert',NULL,'jamaal.albert@gmail.com','853 Stonybrook Street ','Torrance','CA',90505);
 -- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
 --     VALUES('Williemae','Holloway','(510) 246-8375','williemae.holloway@msn.com','69 Cypress St. ','Oakland','CA',94603);
 -- INSERT INTO INVENTARIO_G20827907.PROVEEDOR(first_name, last_name, phone, email, street, city, state, zip_code)
@@ -1500,7 +1500,7 @@ INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, can
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
     VALUES('20100517', 10, 36, 15, 15, 30, 45);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
-    VALUES('20100518', 1, 37, 16, 98, 65, 4);
+    VALUES('20100519', 1, 37, 16, 98, 65, 4);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
     VALUES('20100520', 5, 38, 13, 100, 45, 5);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
@@ -1547,6 +1547,8 @@ INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, can
     VALUES('20100721', 6, 8, 28, 57, 67, 245);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
     VALUES('20100725', 7, 9, 28, 23, 31, 32);
+INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
+    VALUES('20100729', 7, 10, 18, 20, 30, 32);
 
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
     VALUES('20100801', 5, 1, 8, 20, 20, 20);
@@ -1860,6 +1862,8 @@ INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, can
     VALUES('20111024', 2, 8, 28, 57, 67, 245);
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
     VALUES('20111029', 10, 9, 28, 23, 31, 32);
+INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
+    VALUES('20111030', 10, 9, 50, 20, 24, 23);
 
 INSERT INTO INVENTARIO_G20827907.ALMACENA(fecha, id_alm, id_prod, cant_desp, cant_exist, nopal, nmrs)
     VALUES('20111103', 1, 41, 2, 123, 234, 56);
@@ -1989,130 +1993,130 @@ INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, i
     VALUES('20100125', '20100126', 22, 2, 35, 10, 832.99, 8320.99, 6938798.37);
 
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100205', '20100207', 26, 2, 35, 5, 832.99, 4164.95, 3496361.70);
+    VALUES('20100205', '20100207', 26, 8, 35, 5, 832.99, 4164.95, 3496361.70);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100206', '20100209', 11, 2, 36, 8, 832.99, 6663.92, 5597626.16);
+    VALUES('20100206', '20100209', 11, 3, 36, 8, 832.99, 6663.92, 5597626.16);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100208', '20100211', 8, 2, 41, 10, 1469.99, 14699.99, 21608838.30);
+    VALUES('20100208', '20100211', 8, 10, 41, 10, 1469.99, 14699.99, 21608838.30);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100209', '20100212', 2, 1, 37, 5, 832.99, 4164.95, 3469361.70);
+    VALUES('20100209', '20100212', 2, 10, 37, 5, 832.99, 4164.95, 3469361.70);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100219', '20100222', 4, 2, 43, 4, 5299.99, 21199.96, 112359576);
+    VALUES('20100219', '20100222', 4, 9, 43, 4, 5299.99, 21199.96, 112359576);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100219', '20100225', 2, 1, 40, 5, 4999.99, 24999.95, 124999500);
+    VALUES('20100219', '20100225', 2, 8, 40, 5, 4999.99, 24999.95, 124999500);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100221', '20100224', 11, 1, 4, 30, 2899.99, 86999.7, 252298260);
+    VALUES('20100221', '20100224', 11, 7, 4, 30, 2899.99, 86999.7, 252298260);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100224', '20100225', 5, 1, 4, 20, 2899.99, 57999.8, 168198840);
+    VALUES('20100224', '20100225', 5, 5, 4, 20, 2899.99, 57999.8, 168198840);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100224', '20100226', 6, 1, 4, 3, 2899.99, 8699.97, 25229826);
+    VALUES('20100224', '20100226', 6, 4, 4, 3, 2899.99, 8699.97, 25229826);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100224', '20100227', 23, 1, 4, 10, 2899.99, 28999.99, 84099681);
+    VALUES('20100224', '20100227', 23, 3, 4, 10, 2899.99, 28999.99, 84099681);
 
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100305', '20100308', 25, 2, 1, 10, 379.99, 3799.99, 1443958);
+    VALUES('20100305', '20100308', 25, 9, 1, 10, 379.99, 3799.99, 1443958);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100306', '20100307', 10, 1, 7, 10, 3999.99, 39999.99, 159995960);
+    VALUES('20100306', '20100307', 10, 10, 7, 10, 3999.99, 39999.99, 159995960);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100306', '20100309', 11, 1, 7, 9, 3999.99, 35999.91, 143999280);
+    VALUES('20100306', '20100309', 11, 8, 7, 9, 3999.99, 35999.91, 143999280);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100310', '20100311', 6, 2, 10, 10, 1549, 15490, 23994.01);
+    VALUES('20100310', '20100311', 6, 7, 10, 10, 1549, 15490, 23994.01);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100310', '20100312', 7, 2, 3, 6, 999.99, 5999.94, 5999880);
+    VALUES('20100310', '20100312', 7, 6, 3, 6, 999.99, 5999.94, 5999880);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100318', '20100319', 12, 2, 7, 6, 3999.99, 23999.94, 95999520);
+    VALUES('20100318', '20100319', 12, 5, 7, 6, 3999.99, 23999.94, 95999520);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100319', '20100320', 7, 2, 11, 3, 1680.99, 5069.97, 8522569.87);
+    VALUES('20100319', '20100320', 7, 4, 11, 3, 1680.99, 5069.97, 8522569.87);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100319', '20100321', 22, 2, 8, 10, 1799.99, 17999.9, 32399640);
+    VALUES('20100319', '20100321', 22, 3, 8, 10, 1799.99, 17999.9, 32399640);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100320', '20100321', 4, 2, 14, 2, 269.99, 539.98, 145789.20);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100322', '20100323', 13, 2, 2, 15, 749.99, 11249.85, 8437275);
+    VALUES('20100322', '20100323', 13, 1, 2, 15, 749.99, 11249.85, 8437275);
 
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100402', '20100402', 18, 3, 5, 15, 1320.99, 19814.85, 25342995);
+    VALUES('20100402', '20100402', 18, 1, 5, 15, 1320.99, 19814.85, 25342995);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100403', '20100404', 19, 1, 1, 20, 379.99, 7599.8, 2887848);
+    VALUES('20100403', '20100404', 19, 2, 1, 20, 379.99, 7599.8, 2887848);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100403', '20100405', 26, 2, 1, 9, 379.99, 3419.91, 1299531.60);
+    VALUES('20100403', '20100405', 26, 3, 1, 9, 379.99, 3419.91, 1299531.60);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100412', '20100413', 8, 2, 22, 28, 269.99, 7559.72, 2041048.80);
+    VALUES('20100412', '20100413', 8, 4, 22, 28, 269.99, 7559.72, 2041048.80);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100412', '20100414', 13, 2, 29, 9, 999.99, 8999.91, 8999820);
+    VALUES('20100412', '20100414', 13, 5, 29, 9, 999.99, 8999.91, 8999820);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100413', '20100414', 21, 2, 34, 7, 469.99, 3289.93, 1546234.20);
+    VALUES('20100413', '20100414', 21, 4, 34, 7, 469.99, 3289.93, 1546234.20);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100415', '20100416', 16, 2, 35, 7, 832.99, 5830.93, 4857106.38);
+    VALUES('20100415', '20100416', 16, 3, 35, 7, 832.99, 5830.93, 4857106.38);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100425', '20100426', 5, 2, 30, 9, 999.99, 8999.91, 8999820);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100425', '20100426', 16, 2, 34, 40, 469.99, 18799.6, 8835624);
+    VALUES('20100425', '20100426', 16, 1, 34, 40, 469.99, 18799.6, 8835624);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100427', '20100429', 8, 1, 33, 5, 469.99, 2349.95, 1104453);
+    VALUES('20100427', '20100429', 8, 6, 33, 5, 469.99, 2349.95, 1104453);
 
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100507', '20100509', 9, 2, 20, 10, 599.99, 5999.9, 3599340);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100507', '20100510', 5, 2, 26, 17, 599.99, 10199.83, 6119796);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100507', '20100510', 14, 2, 26, 2, 599.99, 1199.8, 719868);
+    VALUES('20100507', '20100510', 14, 8, 26, 2, 599.99, 1199.8, 719868);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100518', '20100520', 8, 2, 5, 5, 1320.99, 6604.95, 8725072.90);
+    VALUES('20100518', '20100520', 8, 9, 5, 5, 1320.99, 6604.95, 8725072.90);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100518', '20100521', 20, 2, 27, 5, 999.99, 4999.5, 4999450);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100519', '20100521', 6, 2, 20, 6, 599.99, 3599.94, 2159928);
+    VALUES('20100519', '20100521', 6, 10, 20, 6, 599.99, 3599.94, 2159928);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100520', '20100521', 14, 2, 16, 7, 599.99, 4199.93, 2519916);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100520', '20100522', 11, 2, 15, 6, 529.99, 3179.94, 1685336.40);
+    VALUES('20100520', '20100522', 11, 6, 15, 6, 529.99, 3179.94, 1685336.40);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100525', '20100527', 8, 2, 50, 15, 5999.99, 8999.85, 5399610);
+    VALUES('20100525', '20100527', 8, 8, 50, 15, 5999.99, 8999.85, 5399610);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100530', '20100531', 2, 3, 50, 12, 5999.99, 71999.88, 431999160);
+    VALUES('20100530', '20100531', 2, 9, 50, 12, 5999.99, 71999.88, 431999160);
 
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100605', '20100608', 25, 2, 1, 10, 379.99, 3799.99, 1443958);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100606', '20100607', 10, 1, 7, 10, 3999.99, 39999.99, 159995960);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100606', '20100609', 11, 1, 7, 9, 3999.99, 35999.91, 143999280);
+    VALUES('20100606', '20100609', 11, 8, 7, 9, 3999.99, 35999.91, 143999280);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100610', '20100611', 6, 2, 10, 10, 1549, 15490, 23994.01);
+    VALUES('20100610', '20100611', 6, 6, 10, 10, 1549, 15490, 23994.01);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100610', '20100612', 7, 2, 3, 6, 999.99, 5999.94, 5999880);
+    VALUES('20100610', '20100612', 7, 3, 3, 6, 999.99, 5999.94, 5999880);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100618', '20100619', 12, 2, 7, 6, 3999.99, 23999.94, 95999520);
+    VALUES('20100618', '20100619', 12, 9, 7, 6, 3999.99, 23999.94, 95999520);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100619', '20100620', 7, 2, 11, 3, 1680.99, 5069.97, 8522569.87);
+    VALUES('20100619', '20100620', 7, 10, 11, 3, 1680.99, 5069.97, 8522569.87);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100619', '20100621', 22, 2, 8, 10, 1799.99, 17999.9, 32399640);
+    VALUES('20100619', '20100621', 22, 6, 8, 10, 1799.99, 17999.9, 32399640);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100620', '20100621', 4, 2, 14, 2, 269.99, 539.98, 145789.20);
+    VALUES('20100620', '20100621', 4, 8, 14, 2, 269.99, 539.98, 145789.20);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100622', '20100623', 13, 2, 2, 15, 749.99, 11249.85, 8437275);
+    VALUES('20100622', '20100623', 13, 9, 2, 15, 749.99, 11249.85, 8437275);
 
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100705', '20100707', 26, 2, 35, 5, 832.99, 4164.95, 3496361.70);
+    VALUES('20100705', '20100707', 26, 1, 35, 5, 832.99, 4164.95, 3496361.70);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100706', '20100709', 11, 2, 36, 8, 832.99, 6663.92, 5597626.16);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100708', '20100711', 8, 2, 41, 10, 1469.99, 14699.99, 21608838.30);
+    VALUES('20100708', '20100711', 8, 3, 41, 10, 1469.99, 14699.99, 21608838.30);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100709', '20100712', 2, 1, 37, 5, 832.99, 4164.95, 3469361.70);
+    VALUES('20100709', '20100712', 2, 4, 37, 5, 832.99, 4164.95, 3469361.70);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100719', '20100722', 4, 2, 43, 4, 5299.99, 21199.96, 112359576);
+    VALUES('20100719', '20100722', 4, 5, 43, 4, 5299.99, 21199.96, 112359576);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100719', '20100725', 2, 1, 40, 5, 4999.99, 24999.95, 124999500);
+    VALUES('20100719', '20100725', 2, 6, 40, 5, 4999.99, 24999.95, 124999500);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100721', '20100724', 11, 1, 4, 30, 2899.99, 86999.7, 252298260);
+    VALUES('20100721', '20100724', 11, 7, 4, 30, 2899.99, 86999.7, 252298260);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100724', '20100725', 5, 1, 4, 20, 2899.99, 57999.8, 168198840);
+    VALUES('20100724', '20100725', 5, 8, 4, 20, 2899.99, 57999.8, 168198840);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100724', '20100726', 6, 1, 4, 3, 2899.99, 8699.97, 25229826);
+    VALUES('20100724', '20100726', 6, 9, 4, 3, 2899.99, 8699.97, 25229826);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100724', '20100727', 23, 1, 4, 10, 2899.99, 28999.99, 84099681);
+    VALUES('20100724', '20100727', 23, 10, 4, 10, 2899.99, 28999.99, 84099681);
 
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100802', '20100802', 18, 3, 5, 15, 1320.99, 19814.85, 25342995);
@@ -2138,21 +2142,21 @@ INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, i
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100901', '20100903', 29, 1, 49, 4, 3499.99, 13999.96, 48999720.0);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100901', '20100903', 12, 2, 35, 45, 832.99, 37484.55, 31224255.30);
+    VALUES('20100901', '20100903', 12, 8, 35, 45, 832.99, 37484.55, 31224255.30);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100902', '20100903', 23, 2, 42, 4, 2299.99, 9199.96, 21159816);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100903', '20100905', 17, 1, 37, 34, 379.99, 12919.66, 4909341.60);
+    VALUES('20100903', '20100905', 17, 8, 37, 34, 379.99, 12919.66, 4909341.60);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100913', '20100916', 24, 2, 38, 5, 549.99, 2749.95, 1512445);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100914', '20100915', 24, 2, 44, 20, 539.99, 10781.98, 5822161.38);
+    VALUES('20100914', '20100915', 24, 6, 44, 20, 539.99, 10781.98, 5822161.38);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100916', '20100917', 24, 2, 44, 10, 539.99, 5390.99, 2911080.69);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100924', '20100925', 20, 2, 48, 23, 1499.99, 34499.7, 51749205);
+    VALUES('20100924', '20100925', 20, 8, 48, 23, 1499.99, 34499.7, 51749205);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20100925', '20100928', 10, 1, 45, 4, 869.99, 3479.96, 3027530.40);
+    VALUES('20100925', '20100928', 10, 10, 45, 4, 869.99, 3479.96, 3027530.40);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20100925', '20100926', 22, 2, 35, 10, 832.99, 8320.99, 6938798.37);
 
@@ -2161,19 +2165,19 @@ INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, i
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20101006', '20101007', 10, 1, 7, 10, 3999.99, 39999.99, 159995960);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101006', '20101009', 11, 1, 7, 9, 3999.99, 35999.91, 143999280);
+    VALUES('20101006', '20101009', 11, 9, 7, 9, 3999.99, 35999.91, 143999280);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101010', '20101011', 6, 2, 10, 10, 1549, 15490, 23994.01);
+    VALUES('20101010', '20101011', 6, 6, 10, 10, 1549, 15490, 23994.01);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101010', '20101012', 7, 2, 3, 6, 999.99, 5999.94, 5999880);
+    VALUES('20101010', '20101012', 7, 3, 3, 6, 999.99, 5999.94, 5999880);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101018', '20101019', 12, 2, 7, 6, 3999.99, 23999.94, 95999520);
+    VALUES('20101018', '20101019', 12, 10, 7, 6, 3999.99, 23999.94, 95999520);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101019', '20101020', 7, 2, 11, 3, 1680.99, 5069.97, 8522569.87);
+    VALUES('20101019', '20101020', 7, 8, 11, 3, 1680.99, 5069.97, 8522569.87);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101019', '20101021', 22, 2, 8, 10, 1799.99, 17999.9, 32399640);
+    VALUES('20101019', '20101021', 22, 6, 8, 10, 1799.99, 17999.9, 32399640);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101020', '20101021', 4, 2, 14, 2, 269.99, 539.98, 145789.20);
+    VALUES('20101020', '20101021', 4, 4, 14, 2, 269.99, 539.98, 145789.20);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20101022', '20101023', 13, 2, 2, 15, 749.99, 11249.85, 8437275);
 
@@ -2188,15 +2192,15 @@ INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, i
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20101112', '20101114', 13, 2, 29, 9, 999.99, 8999.91, 8999820);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101113', '20101114', 21, 2, 34, 7, 469.99, 3289.93, 1546234.20);
+    VALUES('20101113', '20101114', 21, 8, 34, 7, 469.99, 3289.93, 1546234.20);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20101115', '20101116', 16, 2, 35, 7, 832.99, 5830.93, 4857106.38);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20101125', '20101126', 5, 2, 30, 9, 999.99, 8999.91, 8999820);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101125', '20101126', 16, 2, 34, 40, 469.99, 18799.6, 8835624);
+    VALUES('20101125', '20101126', 16, 8, 34, 40, 469.99, 18799.6, 8835624);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20101127', '20101129', 8, 1, 33, 5, 469.99, 2349.95, 1104453);
+    VALUES('20101127', '20101129', 8, 10, 33, 5, 469.99, 2349.95, 1104453);
 
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20101205', '20101208', 25, 2, 1, 10, 379.99, 3799.99, 1443958);
@@ -2220,25 +2224,25 @@ INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, i
     VALUES('20101222', '20101223', 13, 2, 2, 15, 749.99, 11249.85, 8437275);
 /* 2011 */
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110105', '20110108', 25, 2, 1, 10, 379.99, 3799.99, 1443958);
+    VALUES('20110105', '20110108', 25, 10, 1, 10, 379.99, 3799.99, 1443958);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110206', '20110207', 10, 1, 7, 10, 3999.99, 39999.99, 159995960);
+    VALUES('20110206', '20110207', 10, 9, 7, 10, 3999.99, 39999.99, 159995960);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110306', '20110309', 11, 1, 7, 9, 3999.99, 35999.91, 143999280);
+    VALUES('20110306', '20110309', 11, 8, 7, 9, 3999.99, 35999.91, 143999280);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110410', '20110411', 6, 2, 10, 10, 1549, 15490, 23994.01);
+    VALUES('20110410', '20110411', 6, 7, 10, 10, 1549, 15490, 23994.01);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110510', '20110512', 7, 2, 3, 6, 999.99, 5999.94, 5999880);
+    VALUES('20110510', '20110512', 7, 6, 3, 6, 999.99, 5999.94, 5999880);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110618', '20110619', 12, 2, 7, 6, 3999.99, 23999.94, 95999520);
+    VALUES('20110618', '20110619', 12, 5, 7, 6, 3999.99, 23999.94, 95999520);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110719', '20110720', 7, 2, 11, 3, 1680.99, 5069.97, 8522569.87);
+    VALUES('20110719', '20110720', 7, 4, 11, 3, 1680.99, 5069.97, 8522569.87);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110819', '20110821', 22, 2, 8, 10, 1799.99, 17999.9, 32399640);
+    VALUES('20110819', '20110821', 22, 3, 8, 10, 1799.99, 17999.9, 32399640);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110920', '20110921', 4, 2, 14, 2, 269.99, 539.98, 145789.20);
+    VALUES('20110920', '20110921', 4, 4, 14, 2, 269.99, 539.98, 145789.20);
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20111022', '20111023', 13, 2, 2, 15, 749.99, 11249.85, 8437275);
+    VALUES('20111022', '20111023', 13, 5, 2, 15, 749.99, 11249.85, 8437275);
 
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20110103', '20110104', 25, 3, 1, 10, 379.99, 3799.99, 1443958);
@@ -2261,8 +2265,6 @@ INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, i
 INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
     VALUES('20111122', '20111223', 13, 9, 2, 15, 749.99, 11249.85, 8437275);
 
-INSERT INTO INVENTARIO_G20827907.PROVEE(fecha_rec, fecha_env, id_prov, id_alm, id_prod, cant, costo_prod, costo_env, costo_total)
-    VALUES('20110101', '20110105', 25, 9, 1, 10, 379.99, 3799.99, 1443958);
 
 -- Insert table ABASTECE
 /*2010*/

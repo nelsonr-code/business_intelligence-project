@@ -445,7 +445,7 @@ SELECT DIM_A.sk_dim_almacen
 ,      PV.costo_prod AS costo_productos
 ,      PV.costo_env AS costo_envio
 ,      PV.costo_total
-,      CONCAT(CAST(date_format(AL.fecha, '%Y%m%d') AS unsigned), DIM_A.sk_dim_almacen, DIM_L.sk_dim_local, DIM_PV.sk_dim_prov, DIM_P.sk_dim_prod) AS inventario_dd
+-- ,      CONCAT(CAST(date_format(AL.fecha, '%Y%m%d') AS unsigned), DIM_A.sk_dim_almacen, DIM_L.sk_dim_local, DIM_PV.sk_dim_prov, DIM_P.sk_dim_prod) AS inventario_dd
 FROM INVENTARIO_DW_G20827907.DIM_ALMACEN DIM_A
 ,    INVENTARIO_DW_G20827907.DIM_LOCALIDAD DIM_L
 ,    INVENTARIO_DW_G20827907.DIM_PROVEEDOR DIM_PV
@@ -462,6 +462,135 @@ WHERE PV.id_alm = DIM_A.id_almacen AND A.id_ciud = DIM_L.id_ciudad
         AND PV.id_prod = DIM_P.id_prod AND P.id_marca = DIM_P.id_marca
         AND P.id_sub = DIM_P.id_subc AND S.id_cat = DIM_P.id_cat
         AND AL.id_alm = DIM_A.id_almacen AND AL.id_prod = DIM_P.id_prod
+GROUP BY
+        sk_dim_almacen,
+        sk_dim_local,
+        sk_dim_prov,
+        sk_dim_prod,
+        fecha_original
+
+--
+SELECT CAST(DATE_FORMAT(AL.fecha, '%Y%m%d') AS UNSIGNED) AS fecha_original
+,      sk_dim_almacen
+,      sk_dim_local
+,      sk_dim_prov
+,      sk_dim_prod
+,      nmrs
+,      nopal
+,      fecha_rec AS fecha_pedido /* CAST */
+,      fecha_env AS fecha_recibido /* CAST */
+,      cant_desp
+,      cant_exist
+,      DIM_P.pvp AS pvp_prod
+,      PV.costo_prod AS costo_productos
+,      PV.costo_env AS costo_envio
+,      PV.costo_total
+FROM INVENTARIO_DW_G20827907.DIM_ALMACEN DIM_A
+,    INVENTARIO_DW_G20827907.DIM_PRODUCTO DIM_P
+,    INVENTARIO_DW_G20827907.DIM_PROVEEDOR DIM_PV
+,    INVENTARIO_DW_G20827907.DIM_LOCALIDAD DIM_L
+,    INVENTARIO_G20827907.ALMACENA AL
+,    INVENTARIO_G20827907.ALMACEN A
+,    INVENTARIO_G20827907.PRODUCTO P
+,    INVENTARIO_G20827907.PROVEE PV
+WHERE AL.id_alm = DIM_A.id_almacen AND AL.id_prod = DIM_P.id_prod
+        AND PV.id_prov = DIM_PV.id_prov
+
+--
+SELECT
+      CAST(DATE_FORMAT(AL.fecha, '%Y%m%d') AS UNSIGNED) AS fecha_original,
+      sk_dim_almacen,
+    --   sk_dim_local,
+      sk_dim_prov,
+      sk_dim_prod,
+      nmrs,
+      nopal,
+      fecha_rec AS fecha_pedido, /* CAST */
+      fecha_env AS fecha_recibido, /* CAST */
+      cant_desp,
+      cant_exist,
+      DP.pvp AS pvp_prod,
+      PV.costo_prod AS costo_productos,
+      PV.costo_env AS costo_envio,
+      PV.costo_total
+FROM
+    INVENTARIO_G20827907.ALMACENA AL
+        INNER JOIN
+    INVENTARIO_DW_G20827907.DIM_ALMACEN DA ON AL.id_alm = DA.id_almacen
+        INNER JOIN
+    INVENTARIO_DW_G20827907.DIM_PRODUCTO DP ON AL.id_prod = DP.id_prod
+        INNER JOIN
+    INVENTARIO_G20827907.PROVEE PV ON DA.id_almacen = PV.id_alm AND DP.id_prod = PV.id_prod   
+        INNER JOIN
+    INVENTARIO_DW_G20827907.DIM_PROVEEDOR DPR ON PV.id_prov = DPR.id_prov
+
+--
+SELECT
+      CAST(DATE_FORMAT(AL.fecha, '%Y%m%d') AS UNSIGNED) AS fecha_original,
+      sk_dim_almacen,
+      sk_dim_local,
+      sk_dim_prov,
+      sk_dim_prod,
+      nmrs,
+      nopal,
+      CAST(date_format(PV.fecha_rec, '%Y%m%d') AS unsigned) AS fecha_pedido,
+      CAST(date_format(PV.fecha_env, '%Y%m%d') AS unsigned) AS fecha_recibido,
+    --   fecha_rec AS fecha_pedido, /* CAST */
+    --   fecha_env AS fecha_recibido, /* CAST */
+      cant_desp,
+      cant_exist,
+      DP.pvp AS pvp_prod,
+      PV.costo_prod AS costo_productos,
+      PV.costo_env AS costo_envio,
+      PV.costo_total
+FROM
+    INVENTARIO_G20827907.ALMACENA AL
+        INNER JOIN
+    INVENTARIO_DW_G20827907.DIM_TIEMPO DT ON AL.fecha = DT.fecha
+        INNER JOIN
+    INVENTARIO_G20827907.ALMACEN A ON AL.id_alm = A.id_alm
+        INNER JOIN
+    INVENTARIO_G20827907.CIUDAD C ON A.id_ciud = C.id_ciud
+        INNER JOIN
+    INVENTARIO_G20827907.ESTADO E ON C.id_est = E.id_est
+        INNER JOIN
+    INVENTARIO_DW_G20827907.DIM_LOCALIDAD DL ON E.id_est = DL.id_estado AND C.id_ciud = DL.id_ciudad
+        INNER JOIN
+    INVENTARIO_DW_G20827907.DIM_ALMACEN DA ON AL.id_alm = DA.id_almacen
+        INNER JOIN
+    INVENTARIO_DW_G20827907.DIM_PRODUCTO DP ON AL.id_prod = DP.id_prod
+        INNER JOIN
+    INVENTARIO_G20827907.PROVEE PV ON DA.id_almacen = PV.id_alm AND DP.id_prod = PV.id_prod   
+        INNER JOIN
+    INVENTARIO_DW_G20827907.DIM_PROVEEDOR DPR ON PV.id_prov = DPR.id_prov
+GROUP BY
+        sk_dim_almacen,
+        sk_dim_local,
+        sk_dim_prov,
+        sk_dim_prod,
+        fecha_original
+
+
+-- SQL ALMACEN
+-- Actual
+SELECT id_alm AS id_almacen
+,	nomb_alm AS desc_almacen
+,	rif
+,	telf
+,	dimensiones
+,	capacidad_prod AS capacidad
+FROM INVENTARIO_G20827907.ALMACEN
+
+-- Nuevo
+SELECT A.id_alm AS id_almacen
+,	nomb_alm AS desc_almacen
+,	rif
+,	telf
+,	dimensiones
+,	capacidad_prod AS capacidad
+FROM INVENTARIO_G20827907.ALMACEN A
+,    INVENTARIO_G20827907.ALMACENA AL
+WHERE A.id_alm = AL.id_alm
 ---------------------------------------------------------------------
 
 -- ¡Pilas aqui!------------------------------------------------------

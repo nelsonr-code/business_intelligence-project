@@ -10,6 +10,9 @@ Database: MySQL 8.0
 
 -- Create tables section -------------------------------------------------
 
+
+CREATE DATABASE IF NOT EXIST INVENTARIO_DW_G20827907
+
 -- dimension producto
 /*Parece que hay que crear un codigo_concatenado para actualizar o insertar correctamente*/
 CREATE TABLE INVENTARIO_DW_G20827907.DIM_PRODUCTO
@@ -133,7 +136,7 @@ CREATE TABLE INVENTARIO_DW_G20827907.FACT_ALMACEN
     costo_envio FLOAT,
     costo_total FLOAT,
     inventario_dd BIGINT, -- Cambiado a BIGINT. Su tipo era VARCHAR(30) como en el modelo dado
-    CONSTRAINT fact_almacen_pkey PRIMARY KEY (fecha_original, sk_dim_almacen, sk_dim_local, sk_dim_prov, sk_dim_prod),
+    CONSTRAINT fact_almacen_pkey PRIMARY KEY (fecha_original, sk_dim_almacen, sk_dim_local, sk_dim_prov, sk_dim_prod, inventario_dd), /* Agregar a primary key */
     -- CONSTRAINT fact_almacen_fecha_original_fkey FOREIGN KEY (fecha_original) REFERENCES INVENTARIO_DW_G20827907.DIM_TIEMPO (sk_dim_tiempo) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT fact_almacen_sk_almacen_fkey FOREIGN KEY (sk_dim_almacen) REFERENCES INVENTARIO_DW_G20827907.DIM_ALMACEN (sk_dim_almacen) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT fact_almacen_sk_local_fkey FOREIGN KEY (sk_dim_local) REFERENCES INVENTARIO_DW_G20827907.DIM_LOCALIDAD (sk_dim_local) ON DELETE NO ACTION ON UPDATE NO ACTION,

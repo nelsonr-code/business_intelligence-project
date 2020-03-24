@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
     <name>FACT_ALMACEN</name>
@@ -430,14 +429,587 @@
     <created_user>-</created_user>
     <created_date>2020/02/23 20:10:07.865</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2020/02/23 20:10:07.865</modified_date>
-    <key_for_session_key/>
+    <modified_date>2020/03/23 20:17:04.891</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>MySQL dimensional</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>INVENTARIO_DW_G20827907</database>
+    <port>3306</port>
+    <username>BI</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb1ba7228cc2fe83</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
+    <hop>
+      <from>MAX SK</from>
+      <to>DIM_ALMACEN, DIM_LOCALIDAD, DIM_PROVEEDOR, DIM_PRODUCTO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DIM_ALMACEN, DIM_LOCALIDAD, DIM_PROVEEDOR, DIM_PRODUCTO</from>
+      <to>sk_autoincrement</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sk_autoincrement</from>
+      <to>Modified JavaScript value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Insert / update FACT_ALMACEN</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <step>
+    <name>DIM_ALMACEN, DIM_LOCALIDAD, DIM_PROVEEDOR, DIM_PRODUCTO</name>
+    <type>DBJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL dimensional</connection>
+    <rowlimit>0</rowlimit>
+    <sql>SELECT DIM_A.sk_dim_almacen
+,      DIM_L.sk_dim_local
+,      DIM_PV.sk_dim_prov
+,      DIM_P.sk_dim_prod
+,      CAST(date_format(AL.fecha, '%Y%m%d') AS unsigned) AS fecha_original
+,      AL.nmrs
+,      AL.nopal
+,	   CAST(date_format(PV.fecha_rec, '%Y%m%d') AS unsigned) AS fecha_pedido
+,	   CAST(date_format(PV.fecha_env, '%Y%m%d') AS unsigned) AS fecha_recibido
+,      AL.cant_desp
+,      AL.cant_exist
+,      DIM_P.pvp AS pvp_prod
+,      PV.costo_prod AS costo_productos
+,      PV.costo_env AS costo_envio
+,      PV.costo_total
+-- ,      CONCAT(CAST(date_format(AL.fecha, '%Y%m%d') AS unsigned), DIM_A.sk_dim_almacen, DIM_L.sk_dim_local, DIM_PV.sk_dim_prov, DIM_P.sk_dim_prod) AS inventario_dd
+FROM INVENTARIO_DW_G20827907.DIM_ALMACEN DIM_A
+,    INVENTARIO_DW_G20827907.DIM_LOCALIDAD DIM_L
+,    INVENTARIO_DW_G20827907.DIM_PROVEEDOR DIM_PV
+,    INVENTARIO_DW_G20827907.DIM_PRODUCTO DIM_P
+,    INVENTARIO_G20827907.PROVEE PV
+,    INVENTARIO_G20827907.ALMACEN A
+,    INVENTARIO_G20827907.CIUDAD C
+,    INVENTARIO_G20827907.PRODUCTO P
+,    INVENTARIO_G20827907.SUBCATEGORIA S
+,    INVENTARIO_G20827907.ALMACENA AL
+WHERE PV.id_alm = DIM_A.id_almacen AND A.id_ciud = DIM_L.id_ciudad 
+        AND C.id_est = DIM_L.id_estado
+        AND PV.id_prov = DIM_PV.id_prov
+        AND PV.id_prod = DIM_P.id_prod AND P.id_marca = DIM_P.id_marca
+        AND P.id_sub = DIM_P.id_subc AND S.id_cat = DIM_P.id_cat
+        AND AL.id_alm = DIM_A.id_almacen AND AL.id_prod = DIM_P.id_prod
+GROUP BY
+        sk_dim_almacen,
+        sk_dim_local,
+        sk_dim_prov,
+        sk_dim_prod,
+        fecha_original
+</sql>
+    <outer_join>N</outer_join>
+    <replace_vars>N</replace_vars>
+    <parameter>
+    </parameter>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>272</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Insert / update FACT_ALMACEN</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL dimensional</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>INVENTARIO_DW_G20827907</schema>
+      <table>fact_almacen</table>
+      <key>
+        <name>sk_dim_almacen</name>
+        <field>sk_dim_almacen</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_dim_local</name>
+        <field>sk_dim_local</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_dim_prov</name>
+        <field>sk_dim_prov</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_dim_prod</name>
+        <field>sk_dim_prod</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>fecha_original</name>
+        <field>fecha_original</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>sk_dim_almacen</name>
+        <rename>sk_dim_almacen</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>sk_dim_local</name>
+        <rename>sk_dim_local</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>sk_dim_prov</name>
+        <rename>sk_dim_prov</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>sk_dim_prod</name>
+        <rename>sk_dim_prod</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>fecha_original</name>
+        <rename>fecha_original</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>nmrs</name>
+        <rename>nmrs</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nopal</name>
+        <rename>nopal</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>fecha_pedido</name>
+        <rename>fecha_pedido</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>fecha_recibido</name>
+        <rename>fecha_recibido</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>cant_desp</name>
+        <rename>cant_desp</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cant_exist</name>
+        <rename>cant_exist</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pvp_prod</name>
+        <rename>pvp_prod</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>costo_productos</name>
+        <rename>costo_productos</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>costo_envio</name>
+        <rename>costo_envio</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>costo_total</name>
+        <rename>costo_total</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>inventario_dd</name>
+        <rename>inventario_dd</rename>
+        <update>N</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>MAX SK</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>MySQL dimensional</connection>
+    <sql>SELECT MAX(inventario_dd) AS max_sk
+FROM INVENTARIO_DW_G20827907.FACT_ALMACEN</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>32</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>max_sk</name>
+        <rename/>
+      </field>
+      <field>
+        <name>sk_dim_almacen</name>
+        <rename/>
+      </field>
+      <field>
+        <name>sk_dim_local</name>
+        <rename/>
+      </field>
+      <field>
+        <name>sk_dim_prov</name>
+        <rename/>
+      </field>
+      <field>
+        <name>sk_dim_prod</name>
+        <rename/>
+      </field>
+      <field>
+        <name>fecha_original</name>
+        <rename/>
+      </field>
+      <field>
+        <name>nmrs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>nopal</name>
+        <rename/>
+      </field>
+      <field>
+        <name>fecha_pedido</name>
+        <rename/>
+      </field>
+      <field>
+        <name>fecha_recibido</name>
+        <rename/>
+      </field>
+      <field>
+        <name>cant_desp</name>
+        <rename/>
+      </field>
+      <field>
+        <name>cant_exist</name>
+        <rename/>
+      </field>
+      <field>
+        <name>pvp_prod</name>
+        <rename/>
+      </field>
+      <field>
+        <name>costo_productos</name>
+        <rename/>
+      </field>
+      <field>
+        <name>costo_envio</name>
+        <rename/>
+      </field>
+      <field>
+        <name>costo_total</name>
+        <rename/>
+      </field>
+      <field>
+        <name>inventario_dd</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <remove>
+        <name>max_sk</name>
+      </remove>
+      <meta>
+        <name>fecha_original</name>
+        <rename>fecha_original</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>#</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>fecha_pedido</name>
+        <rename>fecha_pedido</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>#</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>fecha_recibido</name>
+        <rename>fecha_recibido</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>#</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>inventario_dd</name>
+        <rename>inventario_dd</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>#</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>800</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sk_autoincrement</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <valuename>sk_autoincrement</valuename>
+    <use_database>N</use_database>
+    <connection/>
+    <schema/>
+    <seqname>SEQ_</seqname>
+    <use_counter>Y</use_counter>
+    <counter_name/>
+    <start_at>1</start_at>
+    <increment_by>1</increment_by>
+    <max_value>999999999</max_value>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Modified JavaScript value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+var inventario_dd = max_sk + sk_autoincrement</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>inventario_dd</name>
+        <rename>inventario_dd</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
